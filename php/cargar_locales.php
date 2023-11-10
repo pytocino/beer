@@ -97,10 +97,13 @@
 
     </section>
     <section>
-        <button class="get-php-button" type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
+        <button type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
     </section>
     <section class="centered-map">
         <div id="mapa" style="width: 800px; height: 400px;"></div>
+    </section>
+    <section>
+        <div id="coordenadas"></div>
     </section>
 </body>
 

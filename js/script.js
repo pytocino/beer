@@ -63,7 +63,7 @@ window.onload = function () {
 		navigator.geolocation.getCurrentPosition(obtenerCoordenadas, gestionError, opciones);
 	}
 
-	const botonCoordenadas = document.getElementById("coordenadasBoton");
+	const botonCoordenadas = document.getElementById("get-php-button");
 	if (navigator.geolocation) {
 		botonCoordenadas.addEventListener('click', generarLocalización);
 	}

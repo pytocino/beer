@@ -14,9 +14,13 @@
 
 <body>
     <header>
-        <h1>BEER FINDER</h1>
+        <nav class="navbar-index">
+            <div class="title-navbar-index">
+                <h1>BEER FINDER</h1>
+            </div>
+        </nav>
     </header>
-    <section>
+    <div>
         <?php
         // Recopila la marca de cerveza del formulario
         if (isset($_GET['marcaCerveza'])) {
@@ -44,18 +48,20 @@
 
             // Mostrar los resultados
             if ($result->num_rows > 0) {
-                echo "<h2>Locales que sirven " . ucwords($marcaCerveza) . ":</h2>";
-                echo "<ul>";
+                echo "<section class='section-php'><div class='title-section-php'><h2>Locales que sirven " . ucwords($marcaCerveza) . ":</h2></div></section>";
+                echo "<section><ul>";
                 while ($row = $result->fetch_assoc()) {
-                    echo "<section >
-                            <div class='locales'>
+                    echo "<section class='ul-php'>
+                            <article class='article-php'>
+                            <div class='places-php'>
                                 <li>
                                     <h3>" . $row['nombre'] . "</h3><br><p>Tipo de local: " . ucwords($row['tipo_local']) . "</p><a href='" . $row['direccion'] . "'target='_blank'><button id='direccion'>Como llegar</button></a>
                                 </li>
                             </div>
+                            </article>
                         </section>";
                 }
-                echo "</ul>";
+                echo "</ul></section>";
             } else {
                 echo "<p>No se encontraron locales que sirvan $marcaCerveza.</p>";
             }
@@ -94,17 +100,16 @@
             echo "No se proporcionó una marca de cerveza válida.";
         }
         ?>
-
-    </section>
-    <section>
-        <button type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
-    </section>
-    <section class="centered-map">
-        <div id="mapa" style="width: 800px; height: 400px;"></div>
-    </section>
-    <section>
-        <div id="coordenadas"></div>
-    </section>
+        <section>
+            <button type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
+        </section>
+        <section class="centered-map">
+            <div id="mapa" style="width: 800px; height: 400px;"></div>
+        </section>
+        <section>
+            <div id="coordenadas"></div>
+        </section>
+    </div>
 </body>
 
 </html>

@@ -122,23 +122,6 @@ article {
         font-size: 24px;
     }
 
-    .menu-list {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: white;
-        /* Cambia el color de fondo según tu diseño */
-        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .menu-list.active {
-        display: flex;
-    }
-
     .form-php-index {
         margin: 15% auto;
     }
@@ -197,11 +180,39 @@ footer {
     text-align: center;
 }
 
-/* Estilos de listas no ordenadas (ul) */
-ul {
+/*/////////////////////////PHP///////////////////////*/
+
+.section-php {
+    padding: 5%;
+}
+
+.title-section-php {
+    color: black;
+}
+
+.ul-php {
     list-style-type: none;
 }
 
+.article-php {
+    border-radius: 10px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    padding: 1%;
+    margin: 2%;
+    margin-bottom: 1%;
+    background-color: white;
+}
+
+.places-php {
+    position: relative;
+    border-radius: 5px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    height: 150px;
+    background-color: whitesmoke;
+    box-shadow: -20px -10px 20px 0px rgba(0, 0, 0, 0.5);
+}
 /* Estilos de elementos de lista (li) */
 li {
     position: relative;

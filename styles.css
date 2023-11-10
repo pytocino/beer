@@ -1,0 +1,168 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Estilos de imágenes */
+img {
+    width: 11px;
+    height: 11px;
+}
+
+/* Estilos del cuerpo (body) */
+body {
+    background-color: #EBBB40;
+}
+
+/* Estilos del encabezado (header) */
+header {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos de secciones (section) */
+section {
+    margin: 20px;
+    padding: 20px;
+}
+
+.article-index {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    border-color: black;
+    border-width: 1.5px;
+    border-style: solid;
+    border-radius: 5px;
+    height: 50%;
+    width: 30%;
+    padding: 1%;
+    margin: 2%;
+}
+
+/* Estilos de encabezados (h1) */
+h1 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: #000;
+}
+
+/* Estilos de campos de entrada (input) */
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+}
+
+/* Estilos de botones (button) */
+button {
+    padding: 10px 20px;
+    background-color: #137513;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d9c1d;
+}
+
+/* Estilos para el formulario centrado (centered-form-index) */
+.centered-form-index {
+    text-align: center;
+    margin-top: 8%;
+}
+
+/* Estilos para etiquetas (label) */
+label {
+    color: #fff;
+    font-size: 24px;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .centered-form {
+        margin: 50% auto;
+    }
+
+    label {
+        font-size: 20px;
+    }
+}
+
+/* Estilos de listas no ordenadas (ul) */
+ul {
+    list-style-type: none;
+}
+
+/* Estilos de elementos de lista (li) */
+li {
+    position: relative;
+    left: 5%;
+    top: 20%;
+}
+
+/* Estilos para elementos con la clase "locales" */
+.locales {
+    position: relative;
+    border-radius: 5px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    height: 150px;
+    background-color: whitesmoke;
+    box-shadow: -20px -10px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para el mapa centrado (centered-map) */
+.centered-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Estilos para el elemento con ID "mapa" */
+#mapa {
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Estilos para enlaces no visitados (a:link) */
+a:link {
+    color: black;
+}
+
+/* Estilos para enlaces visitados (a:visited) */
+a:visited {
+    color: black;
+}
+
+/* Estilos para el elemento con ID "direccion" */
+#direccion {
+    position: absolute;
+    right: 10%;
+}

@@ -122,6 +122,23 @@ article {
         font-size: 24px;
     }
 
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: white;
+        /* Cambia el color de fondo según tu diseño */
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-list.active {
+        display: flex;
+    }
+
     .form-php-index {
         margin: 15% auto;
     }

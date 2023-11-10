@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEER FINDER</title>
     <link rel="icon" href="./ico/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="/leaflet/leaflet.css" />
-    <script src="/leaflet/leaflet.js"></script>
-
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./leaflet/leaflet.css" />
+    <script src="./leaflet/leaflet.js"></script>
+    <script src="./js/script.js"></script>
 </head>
 
 <body>
@@ -98,13 +97,10 @@
 
     </section>
     <section>
-        <button type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
+        <button class="get-php-button" type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
     </section>
     <section class="centered-map">
         <div id="mapa" style="width: 800px; height: 400px;"></div>
-    </section>
-    <section>
-        <div id="coordenadas"></div>
     </section>
 </body>
 

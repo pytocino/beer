@@ -3,76 +3,90 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEER FINDER</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="./ico/favicon.ico" type="image/x-icon">
-
 </head>
 
 <body>
     <header>
-        <nav>
-            <h1 class="titulo">BEER FINDER</h1>
-            <div class="menu">
-                hola
+        <nav class="navbar-index">
+            <div class="title-navbar-index">
+                <h1>BEER FINDER</h1>
+            </div>
+            <div class="toggle-menu">
+                <img id="toggle-button" src="./images/menu.png">
             </div>
         </nav>
     </header>
-    <section class="centered-form-index">
-        <form method="get" action="cargar_locales.php">
-            <label>Busca tu cerveza favorita<br>
-                <input type="text" name="marcaCerveza" placeholder="ej: Estrella Galicia, Mahou" required>
-            </label>
-            <button type="submit"><img alt="imagen de lupa" src="./leaflet/images/lupa.png"></button>
-        </form>
-    </section>
-    <section class="article-index">
-        <article>
-            <div class="titulo-articulo">
-                <h3>Cervezas del mundo</h3>
+    <div>
+        <section class="form-php-index">
+            <form method="get" action="cargar_locales.php">
+                <label for="nombre-cerveza">Busca tu cerveza favorita</label>
+                <div class="inline-input-button">
+                    <input type="text" name="marcaCerveza" placeholder="ej: Estrella Galicia, Mahou" required>
+                    <button class="get-php-button" type="submit" alt="search beer button"><img id="magnifier-button"
+                            alt="imagen de lupa" src="./images/lupa.png"></button>
+                </div>
+            </form>
+        </section>
+        <section class="section-article-index">
+            <article class="article-index">
+                <div class="title-article-index">
+                    <h2>Cervezas del mundo</h2>
+                </div>
+                <div class="body-article-index">
+                    <p>¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consulora), la mejor
+                        cerveza del mundo es Corona, de origen mexicano. El valor de esta marca aumentó un 21% hasta
+                        alcanzar los 7.000 millones de dólares. Heineken (neerlandesa), por su parte, ocupa el
+                        segundo puesto con un aumento de su marca del 23% a 6.900 millones de dólares. Budweiser,
+                        estadounidense, con una valoración de 5.600 millones, cierra el podio.
+                        <strong>¡Salud!🍻</strong>
+                    </p>
+                </div>
+            </article>
+            <article class="article-index">
+                <div class="title-article-index">
+                    <h2>La salud de la cerveza</h2>
+                </div>
+                <div class="body-article-index">
+                    <p>La cerveza, consumida con moderación, puede tener algunos para la salud. Contiene
+                        nutrientes beneficiosos como ácido fólico, proteínas, carbohidratos, fibra soluble, fósforo,
+                        silicio, potasio y sodio. Además, un estudio concluyó que las personas que consumían cerveza
+                        habitualmente de forma moderada tenían menor incidencia de diabetes mellitus e hipertensión,
+                        y mayor cantidad de colesterol bueno que aquellas que no la bebían. <strong>¡Salud!🍻</strong>
+                    </p>
+                </div>
+            </article>
+            <article class="article-index">
+                <div class="title-article-index">
+                    <h2>Curiosidades cerveceras</h2>
+                </div>
+                <div class="body-article-index">
+                    <p>La cerveza es una bebida alcohólica que ha sido parte de la cultura humana durante miles de
+                        años. ¿Sabías que la cerveza primitiva era simplemente harina de cereal fermentada con el mismo
+                        sistema que el pan?. Además, los babilonios consideraban la cerveza como el alimento más
+                        importante y el código del rey Hammurabi dictaba que debía garantizarse a todo ciudadano una
+                        ración diaria de cerveza como parte de la dieta base en Babilonia. <strong>¡Salud!🍻</strong>
+                    </p>
+                </div>
+            </article>
+        </section>
+        <section class="contact-form-index">
+            <div class="title-contact-form">
+                <h2>Contacto</h2>
             </div>
-            <div class="texto-articulo">
-                <p>¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consulora), la mejor
-                    cerveza del mundo es Corona, de origen mexicano. El valor de esta marca aumentó un 21% hasta
-                    alcanzar los 7.000 millones de dólares. Heineken (neerlandesa), por su parte, ocupa el segundo
-                    puesto con un aumento de su marca del 23% a 6.900 millones de dólares. Budweiser, estadounidense,
-                    con una valoración de 5.600 millones, cierra el podio . ¡Salud! 🍻</p>
+            <div class="contact-index">
+                <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
             </div>
-        </article>
-        <article>
-            <div class="titulo-articulo">
-                <h3>La salud de la cerveza</h3>
-            </div>
-            <div class="texto-articulo">
-                <p>La cerveza, consumida con moderación, puede tener algunos beneficios para la salud. Contiene
-                    nutrientes beneficiosos como ácido fólico, proteínas, carbohidratos, fibra soluble, fósforo,
-                    silicio, potasio y sodio. Además, un estudio concluyó que las personas que consumían cerveza
-                    habitualmente de forma moderada tenían menor incidencia de diabetes mellitus e hipertensión, y mayor
-                    cantidad de colesterol bueno que aquellas que no la bebían. ¡Salud! 🍻</p>
-            </div>
-        </article>
-        <article>
-            <div class="titulo-articulo">
-                <h3>Curiosidades cerveceras</h3>
-            </div>
-            <div class="texto-articulo">
-                <p>La cerveza es una bebida alcohólica que ha sido parte de la cultura humana durante miles de años.
-                    ¿Sabías que la cerveza primitiva era simplemente harina de cereal fermentada con el mismo sistema
-                    que el pan?. Además, los babilonios consideraban la cerveza como el alimento más importante y el
-                    código del rey Hammurabi dictaba que debía garantizarse a todo ciudadano una ración diaria de
-                    cerveza como parte de la dieta base en Babilonia. ¡Salud! 🍻</p>
-            </div>
-        </article>
-    </section>
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
-        <form method="post" action="procesar_formulario.php">
-            <!-- Agrega campos de formulario para nombre, correo electrónico, mensaje, etc. -->
-        </form>
-    </section>
-
+        </section>
+    </div>
+    <footer class="footer-index">
+        <div class="footer-content-index">
+            <h3>© 2023 BeerFinder. Todos los derechos reservados.</h3>
+        </div>
+    </footer>
 </body>
 
 </html>

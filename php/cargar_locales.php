@@ -52,13 +52,11 @@
                 echo "<section><ul>";
                 while ($row = $result->fetch_assoc()) {
                     echo "<section class='ul-php'>
-                            <article class='article-php'>
                             <div class='places-php'>
                                 <li>
-                                    <h3>" . $row['nombre'] . "</h3><br><p>Tipo de local: " . ucwords($row['tipo_local']) . "</p><a href='" . $row['direccion'] . "'target='_blank'><button id='direccion'>Como llegar</button></a>
+                                    <h3>" . $row['nombre'] . "</h3><p>Tipo de local: " . ucwords($row['tipo_local']) . "</p><a href='" . $row['direccion'] . "'target='_blank'><button class='where-php' id='direccion'>Como llegar</button></a>
                                 </li>
                             </div>
-                            </article>
                         </section>";
                 }
                 echo "</ul></section>";
@@ -101,15 +99,19 @@
         }
         ?>
         <section>
-            <button type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
+            <div class="show-map">
+                <button class="where-php" type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
+            </div>
         </section>
         <section class="centered-map">
-            <div id="mapa" style="width: 800px; height: 400px;"></div>
-        </section>
-        <section>
-            <div id="coordenadas"></div>
+            <div id="mapa"></div>
         </section>
     </div>
+    <footer class="footer-index">
+        <div class="footer-content-index">
+            <h3>© 2023 BeerFinder. Todos los derechos reservados.</h3>
+        </div>
+    </footer>
 </body>
 
 </html>

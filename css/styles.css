@@ -183,7 +183,8 @@ footer {
 /*/////////////////////////PHP///////////////////////*/
 
 .section-php {
-    padding: 5%;
+    padding-top: 4%;
+    padding-left: 3%;
 }
 
 .title-section-php {
@@ -194,43 +195,67 @@ footer {
     list-style-type: none;
 }
 
-.article-php {
-    border-radius: 10px;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
-    padding: 1%;
-    margin: 2%;
-    margin-bottom: 1%;
-    background-color: white;
-}
-
 .places-php {
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 7%;
     border-radius: 5px;
     border-color: black;
-    border-width: 2px;
+    border-width: 1.5px;
     border-style: solid;
-    height: 150px;
+    min-height: 150px;
     background-color: whitesmoke;
-    box-shadow: -20px -10px 20px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: -20px -10px 20px 0px rgba(0, 0, 0, 0.4);
 }
 /* Estilos de elementos de lista (li) */
 li {
-    position: relative;
-    left: 5%;
-    top: 20%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Estilos para elementos con la clase "locales" */
-.locales {
-    position: relative;
-    border-radius: 5px;
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-    height: 150px;
-    background-color: whitesmoke;
-    box-shadow: -20px -10px 20px 0px rgba(0, 0, 0, 0.5);
+li > p{
+    padding-left: 7%;
+    padding-top: 1%;
 }
+
+li > h3 {
+    padding-top: 4%;
+    padding-left: 4%;
+    
+}
+
+li > a {
+    padding-right: 5%;
+    padding-bottom: 3%;
+}
+
+.where-php {
+    padding: 9px 24px;
+    background-color: #137513;
+    border: 1px solid #137513;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 1%;
+    
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+button:hover.where-php {
+    background-color: #1d9c1d;
+}
+
+.show-map {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;}
 
 /* Estilos para el mapa centrado (centered-map) */
 .centered-map {
@@ -245,6 +270,8 @@ li {
 #mapa {
     text-align: center;
     border-radius: 10px;
+    width: 800px; 
+    height: 400px;
 }
 
 /* Estilos para enlaces no visitados (a:link) */
@@ -255,10 +282,4 @@ a:link {
 /* Estilos para enlaces visitados (a:visited) */
 a:visited {
     color: black;
-}
-
-/* Estilos para el elemento con ID "direccion" */
-#direccion {
-    position: absolute;
-    right: 10%;
 }

@@ -177,7 +177,9 @@ footer {
     background-color: black;
     color: white;
     min-height: 100px;
-
+    bottom: auto;
+    width: 100%;
+    position:sticky;
 }
 
 .footer-content-index {
@@ -376,11 +378,6 @@ a:visited {
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    
 }
 
 a svg {

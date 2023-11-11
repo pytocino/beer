@@ -7,22 +7,48 @@
     <title>BEER FINDER</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="icon" href="./ico/favicon.ico" type="image/x-icon">
+    <script>
+        function openNav() {
+            document.getElementById("sideNavigation").style.width = "250px";
+            document.getElementById("main").style.marginRight = "250px";
+            document.getElementById("main").style.opacity = "0.5";
+            document.body.style.overflow = "hidden";
+        }
+        function closeNav() {
+            document.getElementById("sideNavigation").style.width = "0";
+            document.getElementById("main").style.marginRight = "0";
+            document.getElementById("main").style.opacity = "1";
+            document.body.style.overflow = "visible";
+        }
+    </script>
 </head>
 
 <body>
     <header>
         <nav class="navbar-index">
             <div class="title-navbar-index">
-                <h1>BEER FINDER</h1>
+                <a href="#"><h1>BEER FINDER</h1></a>
             </div>
-            <div class="toggle-menu">
-                <img id="toggle-button" src="./images/menu.png" alt="menu desplegable">
+            <div id="sideNavigation" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">INICIAR SESION</a>
+                <a href="#">REGISTRO</a>
+                <a href="#contact">CONTACTO</a>
+            </div>
+            <div class="topnav">
+                <a href="#" onclick="openNav()">
+                    <svg width="30" height="30" id="icoOpen">
+                        <path d="M0,5 30,5" stroke="#000" stroke-width="5" />
+                        <path d="M0,14 30,14" stroke="#000" stroke-width="5" />
+                        <path d="M0,23 30,23" stroke="#000" stroke-width="5" />
+                    </svg>
+                </a>
             </div>
         </nav>
     </header>
-    <div>
+    <div id="main">
         <section class="form-php-index">
-            <form method="get" action="./php/cargar_locales.php">
+            <form method="get" action="./locales/cargar_locales.php">
                 <label for="nombre-cerveza">Busca tu cerveza favorita</label>
                 <div class="inline-input-button">
                     <input type="text" name="marcaCerveza" placeholder="ej: Estrella Galicia, Mahou" required>
@@ -73,7 +99,7 @@
                 </div>
             </article>
         </section>
-        <section class="contact-form-index">
+        <section class="contact-form-index" id="contact">
             <div class="title-contact-form">
                 <h2>Contacto</h2>
             </div>

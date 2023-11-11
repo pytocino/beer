@@ -20,7 +20,7 @@ nav {
 }
 
 .title-navbar-index {
-    flex-grow: 1;
+    flex-grow: 0.5;
     text-align: center;
 
 }
@@ -39,8 +39,10 @@ nav {
 /* BODY SECTION*/
 
 body {
+    overflow-y: visible;
     background-color: #EBBB40;
 }
+
 
 .form-php-index {
     text-align: center;
@@ -156,6 +158,8 @@ article {
         flex-direction: column;
         fill-rule: evenodd;
     }
+
+    
 }
 
 .contact-form-index {
@@ -207,6 +211,7 @@ footer {
     background-color: whitesmoke;
     box-shadow: -20px -10px 20px 0px rgba(0, 0, 0, 0.4);
 }
+
 /* Estilos de elementos de lista (li) */
 li {
     flex-grow: 1;
@@ -215,18 +220,18 @@ li {
     justify-content: space-between;
 }
 
-li > p{
+li>p {
     padding-left: 7%;
     padding-top: 1%;
 }
 
-li > h3 {
+li>h3 {
     padding-top: 4%;
     padding-left: 4%;
-    
+
 }
 
-li > a {
+li>a {
     padding-right: 5%;
     padding-bottom: 3%;
 }
@@ -238,7 +243,7 @@ li > a {
     border-radius: 4px;
     cursor: pointer;
     margin: 1%;
-    
+
 }
 
 a {
@@ -255,7 +260,8 @@ button:hover.where-php {
 .show-map {
     display: flex;
     flex-direction: row;
-    justify-content: center;}
+    justify-content: center;
+}
 
 /* Estilos para el mapa centrado (centered-map) */
 .centered-map {
@@ -270,7 +276,7 @@ button:hover.where-php {
 #mapa {
     text-align: center;
     border-radius: 10px;
-    width: 800px; 
+    width: 800px;
     height: 400px;
 }
 
@@ -283,3 +289,101 @@ a:link {
 a:visited {
     color: black;
 }
+
+
+
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    margin-right: 0;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover,
+.offcanvas a:focus {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-right .5s;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a>svg {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* text-align: center; */
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    
+}
+
+a svg {
+    transition: all .5s ease;
+}
+

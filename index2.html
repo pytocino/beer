@@ -4,36 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEER FINDER</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>BEERFINDER</title>
+    <link rel="stylesheet" href="./css/styles2.css">
     <link rel="icon" href="./ico/favicon.ico" type="image/x-icon">
     <script>
         function openNav() {
             document.getElementById("sideNavigation").style.width = "250px";
             document.getElementById("main").style.marginRight = "250px";
-            document.getElementById("main").style.opacity = "0.5";
-            document.body.style.overflow = "hidden";
+
         }
         function closeNav() {
             document.getElementById("sideNavigation").style.width = "0";
             document.getElementById("main").style.marginRight = "0";
-            document.getElementById("main").style.opacity = "1";
-            document.body.style.overflow = "visible";
+
         }
     </script>
 </head>
 
 <body>
     <header>
-        <nav class="navbar-index">
-            <div class="title-navbar-index">
-                <a href="#"><h1>BEER FINDER</h1></a>
-            </div>
-            <div id="sideNavigation" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#">INICIAR SESION</a>
-                <a href="#">REGISTRO</a>
-                <a href="#contact">CONTACTO</a>
+        <nav>
+            <div class="title-index">
+                <a href="index2.html">
+                    <h1>BEERFINDER</h1>
+                </a>
             </div>
             <div class="topnav">
                 <a href="#" onclick="openNav()">
@@ -43,6 +37,12 @@
                         <path d="M0,23 30,23" stroke="#000" stroke-width="5" />
                     </svg>
                 </a>
+            </div>
+            <div id="sideNavigation" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">INICIAR SESION</a>
+                <a href="#">REGISTRO</a>
+                <a href="#contact">CONTACTO</a>
             </div>
         </nav>
     </header>
@@ -108,9 +108,11 @@
             </div>
         </section>
     </div>
-    <footer class="footer-index">
-        <div class="footer-content-index">
-            <h3>© 2023 BeerFinder. Todos los derechos reservados.</h3>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-content-index">
+                <h3>© 2023 BeerFinder. Todos los derechos reservados.</h3>
+            </div>
         </div>
     </footer>
 </body>

@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    font-style: normal;
+}
+
+/* HEADER SECTION */
+
+header {
+    background-color: white;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-index {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    margin-left: 3%;
+}
+
+.title-index h1 {
+    font-size: 36px;
+    color: #000;
+    font-weight: bold 700;
+    font-style: italic;
+}
+
+.topnav {
+    display: flex;
+    margin-left: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    margin-right: 0;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover,
+.offcanvas a:focus {
+    color: white;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-right .5s;
+    overflow: hidden;
+    width: 100%;
+}
+
+.topnav a>svg {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+a svg {
+    transition: all .5s ease;
+}
+
+/* BODY SECTION*/
+
+body {
+    background-color: #EBBB40;
+    overflow-y: visible;
+}
+
+.form-php-index {
+    text-align: center;
+    margin: 5%;
+    color: white;
+    font-size: 25px;
+}
+
+.inline-input-button {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    padding: 13px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+}
+
+.get-php-button {
+    padding: 9px 24px;
+    background-color: #137513;
+    border: 1px solid #137513;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 1%;
+}
+
+button:hover.get-php-button {
+    background-color: #1d9c1d;
+}
+
+#magnifier-button {
+    height: 20px;
+    width: 20px;
+}
+
+.section-article-index {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.article-index {
+    border-radius: 10px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    padding: 1%;
+    margin: 2%;
+    margin-bottom: 1%;
+    background-color: white;
+}
+
+.title-article-index {
+    margin-top: 2.5%;
+    text-align: center;
+}
+
+.body-article-index {
+    margin: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .title-navbar-index {
+        font-size: 24px;
+    }
+
+    .form-php-index {
+        margin: 15% auto;
+    }
+
+    input {
+        width: 60%;
+        margin: 1%;
+    }
+
+    .get-php-button {
+        margin: 1%;
+    }
+
+    label {
+        font-size: 22px;
+    }
+
+    .section-article-index {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .article-index {
+        width: fit-content;
+        width: -moz-fit-content;
+    }
+
+    .footer-index {
+        display: flex;
+        flex-direction: column;
+        fill-rule: evenodd;
+    }
+
+}
+
+.contact-form-index {
+    display: flex;
+    flex-direction: column;
+    /* padding: 5%; */
+    margin: 10%;
+}
+
+/* FOOTER SECTION*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    min-height: 100px;
+    bottom: auto;
+    width: 100%;
+    position: sticky;
+}
+
+.footer-content-index {
+    text-align: center;
+}

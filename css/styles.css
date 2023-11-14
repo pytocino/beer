@@ -282,7 +282,6 @@ footer {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    flex-grow: 1;
 }
 
 .places-php {
@@ -293,6 +292,7 @@ footer {
     min-height: 150px;
     background-color: whitesmoke;
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.4);
+    flex-grow: 1;
 }
 
 /* Estilos de elementos de lista (li) */

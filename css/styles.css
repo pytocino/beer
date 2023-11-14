@@ -282,6 +282,7 @@ footer {
     list-style-type: none;
     display: flex;
     justify-content: center;
+    flex-grow: 1;
 }
 
 .places-php {

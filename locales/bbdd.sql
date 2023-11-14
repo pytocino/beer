@@ -1,6 +1,6 @@
 -- Crear la base de datos
 CREATE DATABASE beerfinder;
-
+USE beerfinder;
 -- Crear la tabla de Marcas de Cerveza
 CREATE TABLE marcas_cerveza (
     id_marca INT AUTO_INCREMENT PRIMARY KEY,

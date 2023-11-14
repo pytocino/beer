@@ -280,6 +280,8 @@ footer {
 
 .ul-php {
     list-style-type: none;
+    display: flex;
+    justify-content: center;
 }
 
 .places-php {
@@ -287,9 +289,6 @@ footer {
     flex-direction: row;
     margin: 7%;
     border-radius: 5px;
-    border-color: black;
-    border-width: 1.5px;
-    border-style: solid;
     min-height: 150px;
     background-color: whitesmoke;
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.4);

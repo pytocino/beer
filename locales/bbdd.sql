@@ -33,34 +33,19 @@ CREATE PROCEDURE AgregarAsociacionMarcaLocal(
 )
 BEGIN
     DECLARE local_id INT;
-    DECLARE marca_existente INT;
-    
-    -- Obtener el ID del local si existe
+
+    -- Obtener el ID del local
     SELECT id_local INTO local_id
     FROM locales
     WHERE nombre = nombre_local;
-    
-    -- Verificar si el local existe
-    IF local_id IS NOT NULL THEN
-        -- Verificar si la asociación ya existe
-        SELECT COUNT(*)
-        INTO marca_existente
-        FROM marcas_locales
-        WHERE id_local = local_id AND nombre_marca = nombre_marca;
-        
-        -- Insertar la asociación si no existe
-        IF marca_existente = 0 THEN
-            INSERT INTO marcas_locales (id_local, nombre_marca)
-            VALUES (local_id, nombre_marca);
-        ELSE
-            SELECT 'La asociación ya existe. No se insertó ningún registro.' AS mensaje;
-        END IF;
-    ELSE
-        SELECT 'El local especificado no se encuentra en la base de datos.' AS mensaje;
-    END IF;
+
+    -- Insertar la asociación en la tabla marcas_locales, ignorando duplicados
+    INSERT IGNORE INTO marcas_locales (id_local, nombre_marca)
+    VALUES (local_id, nombre_marca);
 END //
 
 DELIMITER ;
+
 
 
 INSERT INTO `locales` (`nombre`, `direccion`, `latitud`, `longitud`, `tipo_local`) VALUES

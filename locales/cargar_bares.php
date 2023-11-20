@@ -7,7 +7,7 @@ if ($conn->connect_error) {
 }
 
 // Nombre del archivo de texto
-$archivo = './bares';
+$archivo = 'beers.txt';
 
 // Abrir el archivo y leer los nombres
 $nombres = file($archivo, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);

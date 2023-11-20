@@ -162,9 +162,3 @@ lagunitas maximus
 lagunitas hoppy refresher
 
 coronita
-
-
-forwarders {
-                8.8.8.8;
-                8.8.4.4;
-        };

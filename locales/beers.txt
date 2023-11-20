@@ -11,7 +11,6 @@ mahou barrica
 mahou barrica bourbon
 mahou barrica 12 meses
 mahou sin
-mahou clasica
 mahou rose
 
 alhambra reserva 1925
@@ -162,3 +161,5 @@ lagunitas maximus
 lagunitas hoppy refresher
 
 coronita
+
+carlsberg 

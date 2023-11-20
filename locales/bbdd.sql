@@ -25,38 +25,45 @@ CREATE TABLE marcas_locales (
     FOREIGN KEY (id_local) REFERENCES locales(id_local)
 );
 
--- Modificación del procedimiento para utilizar las columnas existentes en marcas_locales
-CREATE PROCEDURE AgregarMarcaLocal(
-    IN nombre_local VARCHAR(255),
-    IN nombre_marca VARCHAR(255)
+DELIMITER //
+
+CREATE PROCEDURE AsociarMarcaConLocal(
+    IN nombreLocal VARCHAR(255),
+    IN nombreMarca VARCHAR(255)
 )
 BEGIN
-    DECLARE local_id INT;
-    DECLARE marca_id INT;
-
-    -- Buscar el ID del local por su nombre
-    SELECT id_local INTO local_id FROM locales WHERE nombre = nombre_local;
-
-    IF local_id IS NULL THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El local no existe.';
-    END IF;
-
-    -- Buscar el ID de la marca por su nombre
-    SELECT id_marca INTO marca_id FROM marcas_cerveza WHERE nombre = nombre_marca;
-
-    IF marca_id IS NULL THEN
-        INSERT INTO marcas_cerveza (nombre) VALUES (nombre_marca);
-        SET marca_id = LAST_INSERT_ID();
-    END IF;
-
-    -- Verificar si ya existe la relación entre la marca y el local
-    IF EXISTS(SELECT 1 FROM marcas_locales WHERE id_local = local_id AND nombre_marca = nombre_marca) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'La relación entre esta marca y local ya existe.';
+    DECLARE localID INT;
+    DECLARE marcaID INT;
+    
+    -- Obtener el ID del local
+    SELECT id_local INTO localID FROM locales WHERE nombre = nombreLocal;
+    
+    -- Obtener el ID de la marca
+    SELECT id_marca INTO marcaID FROM marcas_cerveza WHERE nombre = nombreMarca;
+    
+    -- Verificar si la relación ya existe
+    IF localID IS NOT NULL AND marcaID IS NOT NULL THEN
+        DECLARE existeRelacion INT;
+        SELECT COUNT(*) INTO existeRelacion 
+        FROM marcas_locales 
+        WHERE id_local = localID AND nombre_marca = nombreMarca;
+        
+        IF existeRelacion = 0 THEN
+            -- Insertar la relación si no existe
+            INSERT INTO marcas_locales (id_local, nombre_marca)
+            VALUES (localID, nombreMarca);
+            SELECT 'Relación insertada correctamente' AS Message;
+        ELSE
+            SELECT 'La relación ya existe' AS Message;
+        END IF;
     ELSE
-        -- Agregar la relación entre la marca y el local
-        INSERT INTO marcas_locales (id_local, nombre_marca) VALUES (local_id, nombre_marca);
+        SELECT 'Error: Local o marca no encontrados' AS Message;
     END IF;
-END;
+    
+END //
+
+DELIMITER ;
+
 
 
 SELECT L.*

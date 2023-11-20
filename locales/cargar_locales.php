@@ -52,16 +52,22 @@
 
                 // Mostrar los resultados
                 if ($result->num_rows > 0) {
-                    echo "<div class='section-php'><div class='title-section-php'><h2>Locales que sirven " . ucwords($marcaCerveza) . ":</h2></div>";
+                    echo "  <div class='section-php'>
+                                <h2>Locales que sirven " . ucwords($marcaCerveza) . ":</h2>
+                            </div>";
                     echo "<div><ul>";
                     while ($row = $result->fetch_assoc()) {
-                        echo "<div>
-                            <div class='places-php'>
-                                <li>
-                                    <h3>" . $row['nombre'] . "</h3><p>Tipo de local: " . ucwords($row['tipo_local']) . "</p><a href='" . $row['direccion'] . "'target='_blank'><button>Como llegar</button></a>
-                                </li>
-                            </div>
-                        </div>";
+                        echo "  <div>
+                                    <div class='places-php'>
+                                        <li>
+                                            <h3>" . $row['nombre'] . "</h3>
+                                                <p>Tipo de local: " . ucwords($row['tipo_local']) . "</p>
+                                                <a href='" . $row['direccion'] . "'target='_blank'>
+                                                <button>Como llegar</button>
+                                                </a>
+                                        </li>
+                                    </div>
+                                </div>";
                     }
                     echo "</ul></div>";
                 } else {

@@ -243,3 +243,76 @@ footer {
     text-align: center;
     padding: 5%;
 }
+
+#marca {
+    margin: 2%;
+    padding: 5%;
+}
+
+#main {
+    background-color: #f9d857;
+}
+
+#marcaLocales {
+    margin: 5%;
+}
+
+ul {
+    list-style: none;
+}
+
+#listado {
+    background-color: white;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#listado>* {
+    margin: 2%;
+}
+
+.boton {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 30%;
+}
+
+#mostrarMapa>* {
+    margin: 5%;
+}
+
+#mostrarMapa{
+    height: 100%;
+}
+
+#mostrarMapa>#mapa {
+    display: flex;
+    justify-content: center;    
+}
+
+#coordenadasBoton {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+#mapa {
+    margin: 5%;
+    padding: 5%;
+    width: 90%;
+    height: 400px;
+    border-radius: 5px;
+}

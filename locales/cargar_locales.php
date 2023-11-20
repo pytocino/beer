@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEERFINDER</title>
     <link rel="icon" href="/ico/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="stylesheet" href="../css/style2.css">
     <link rel="stylesheet" href="/leaflet/leaflet.css" />
     <script src="/leaflet/leaflet.js"></script>
     <script src="/js/script.js"></script>
@@ -17,13 +17,13 @@
 
 <body>
     <header>
-        <div class="header">
+        <div id="header">
             <a href="../index.html">
                 <img src="/images/beerfinder.png" alt="logo" width="200px">
             </a>
         </div>
     </header>
-    <div id="cuerpo">
+    <div id="main">
         <section>
             <?php
             // Recopila la marca de cerveza del formulario
@@ -52,22 +52,16 @@
 
                 // Mostrar los resultados
                 if ($result->num_rows > 0) {
-                    echo "  <div class='section-php'>
+                    echo "  <div id='marca'>
                                 <h2>Locales que sirven " . ucwords($marcaCerveza) . ":</h2>
                             </div>";
-                    echo "<div><ul>";
+                    echo "<div id ='marcaLocales'><ul>";
                     while ($row = $result->fetch_assoc()) {
-                        echo "  <div>
-                                    <div class='places-php'>
-                                        <li>
-                                            <h3>" . $row['nombre'] . "</h3>
-                                                <p>Tipo de local: " . ucwords($row['tipo_local']) . "</p>
-                                                <a href='" . $row['direccion'] . "'target='_blank'>
-                                                <button>Como llegar</button>
-                                                </a>
-                                        </li>
-                                    </div>
-                                </div>";
+                        echo "  <li id='listado'>
+                                    <h3>" . $row['nombre'] . "</h3>
+                                    <p>Tipo de local: " . ucwords($row['tipo_local']) . "</p>
+                                    <a class='boton' href='" . $row['direccion'] . "'target='_blank'>Como llegar</a>
+                                </li>";
                     }
                     echo "</ul></div>";
                 } else {
@@ -108,17 +102,16 @@
                 echo "No se proporcionó una marca de cerveza válida.";
             }
             ?>
-            <div class="show-map">
-                <button class="where-php" type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
-            </div>
-            <div class="centered-map">
+            <div id="mostrarMapa">
+                <div>
+                    <button type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
+                </div>
+                <div id="mapa"></div>
             </div>
         </section>
     </div>
-    <footer class="footer-index">
-        <div class="footer-content-index">
-            <h3>© 2023 BeerFinder. Todos los derechos reservados.</h3>
-        </div>
+    <footer>
+        <h3>© 2023 BeerFinder.<br>Todos los derechos reservados.</h3>
     </footer>
 </body>
 

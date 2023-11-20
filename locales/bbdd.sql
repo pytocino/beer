@@ -26,44 +26,31 @@ CREATE TABLE marcas_locales (
 );
 
 DELIMITER //
-
-CREATE PROCEDURE AsociarMarcaConLocal(
-    IN nombreLocal VARCHAR(255),
-    IN nombreMarca VARCHAR(255)
+CREATE PROCEDURE AgregarAsociacionMarcaLocal(
+    IN nombre_marca VARCHAR(255),
+    IN nombre_local VARCHAR(255)
 )
 BEGIN
-    DECLARE localID INT;
-    DECLARE marcaID INT;
+    DECLARE local_id INT;
+    DECLARE marca_existente INT;
     
-    -- Obtener el ID del local
-    SELECT id_local INTO localID FROM locales WHERE nombre = nombreLocal;
+    SELECT id_local INTO local_id
+    FROM locales
+    WHERE nombre = nombre_local;
     
-    -- Obtener el ID de la marca
-    SELECT id_marca INTO marcaID FROM marcas_cerveza WHERE nombre = nombreMarca;
+    SELECT COUNT(*)
+    INTO marca_existente
+    FROM marcas_locales
+    WHERE id_local = local_id AND nombre_marca = nombre_marca;
     
-    -- Verificar si la relación ya existe
-    IF localID IS NOT NULL AND marcaID IS NOT NULL THEN
-        DECLARE existeRelacion INT;
-        SELECT COUNT(*) INTO existeRelacion 
-        FROM marcas_locales 
-        WHERE id_local = localID AND nombre_marca = nombreMarca;
-        
-        IF existeRelacion = 0 THEN
-            -- Insertar la relación si no existe
-            INSERT INTO marcas_locales (id_local, nombre_marca)
-            VALUES (localID, nombreMarca);
-            SELECT 'Relación insertada correctamente' AS Message;
-        ELSE
-            SELECT 'La relación ya existe' AS Message;
-        END IF;
+    IF marca_existente = 0 THEN
+        INSERT INTO marcas_locales (id_local, nombre_marca)
+        VALUES (local_id, nombre_marca);
     ELSE
-        SELECT 'Error: Local o marca no encontrados' AS Message;
+        SELECT 'La asociación ya existe. No se insertó ningún registro.' AS mensaje;
     END IF;
-    
 END //
-
 DELIMITER ;
-
 
 
 SELECT L.*

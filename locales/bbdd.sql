@@ -74,10 +74,10 @@ FROM locales L
 JOIN marcas_locales ML ON L.id_local = ML.id_local
 WHERE ML.nombre_marca = '?';
 
-CALL AgregarAsociacionMarcaLocal('Dower''s', 'aguila');
-CALL AgregarAsociacionMarcaLocal('Dower''s', 'heineken');
-CALL AgregarAsociacionMarcaLocal('Dower''s', 'amstel');
-CALL AgregarAsociacionMarcaLocal('CID Cafeteria', 'estrella galicia');
-CALL AgregarAsociacionMarcaLocal('CID Cafeteria', 'mahou');
-CALL AgregarAsociacionMarcaLocal('Radio Bar', 'guinness');
-CALL AgregarAsociacionMarcaLocal('Radio Bar', 'estrella galicia');
+CALL AgregarAsociacionMarcaLocal('aguila', 'Dower''s');
+CALL AgregarAsociacionMarcaLocal('heineken', 'Dower''s');
+CALL AgregarAsociacionMarcaLocal('amstel', 'Dower''s');
+CALL AgregarAsociacionMarcaLocal('estrella galicia', 'CID Cafeteria');
+CALL AgregarAsociacionMarcaLocal('mahou', 'CID Cafeteria');
+CALL AgregarAsociacionMarcaLocal('guinnes', 'Radio Bar');
+CALL AgregarAsociacionMarcaLocal('estrella galicia', 'Radio Bar');

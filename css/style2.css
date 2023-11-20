@@ -36,7 +36,7 @@ section {
 #foto {
     height: 500px;
     width: 100%;
-    background-image: url(irish-bars-in-stuttgart-germany.jpg);
+    background-image: url(/images/irish-bars-in-stuttgart-germany.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -122,7 +122,7 @@ form>* {
 }
 
 #contenido1>#imagen1 {
-    background-image: url(imagen1.jpg);
+    background-image: url(/images/imagen1.jpg);
     background-position: center;
     background-size: cover;
     width: 50%;
@@ -130,7 +130,7 @@ form>* {
 }
 
 #contenido2>#imagen2 {
-    background-image: url(imagen2.jpg);
+    background-image: url(/images/imagen2.jpg);
     background-size: cover;
     background-position: center;
     width: 50%;
@@ -138,7 +138,7 @@ form>* {
 }
 
 #contenido1>#imagen3 {
-    background-image: url(coldbeeer.jpg);
+    background-image: url(/images/coldbeeer.jpg);
     background-size: cover;
     background-position: top;
     width: 50%;

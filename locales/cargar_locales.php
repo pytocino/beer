@@ -20,7 +20,7 @@
     <header>
         <nav class="navbar-index">
             <div class="title-navbar-index">
-                <a href="index.html">
+                <a href="/beerfinder/index.html">
                     <img src="./images/beerfinder.png" alt="logo" width="200px">
                 </a>
             </div>

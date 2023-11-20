@@ -51,11 +51,21 @@ BEGIN
         SET marca_id = LAST_INSERT_ID();
     END IF;
 
-    -- Agregar la relación entre la marca y el local sin verificar si ya existe
-    INSERT INTO marcas_locales (id_local, nombre_marca) VALUES (local_id, nombre_marca);
+    -- Verificar si ya existe la relación entre la marca y el local
+    IF EXISTS(SELECT 1 FROM marcas_locales WHERE id_local = local_id AND id_marca = marca_id) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'La relación entre esta marca y local ya existe.';
+    ELSE
+        -- Agregar la relación entre la marca y el local
+        INSERT INTO marcas_locales (id_local, id_marca) VALUES (local_id, marca_id);
+    END IF;
 END;
 //
 DELIMITER ;
+
+SELECT L.*
+FROM locales L
+JOIN marcas_locales ML ON L.id_local = ML.id_local
+WHERE ML.nombre_marca = '?';
 
 CALL AgregarMarcaLocal('Dower''s', 'aguila');
 CALL AgregarMarcaLocal('Dower''s', 'heineken');
@@ -64,9 +74,3 @@ CALL AgregarMarcaLocal('CID Cafetería', 'estrella galicia');
 CALL AgregarMarcaLocal('CID Cafetería', 'mahou');
 CALL AgregarMarcaLocal('Radio Bar', 'guinness');
 CALL AgregarMarcaLocal('Radio Bar', 'estrella galicia');
-
-
-SELECT L.*
-FROM locales L
-JOIN marcas_locales ML ON L.id_local = ML.id_local
-WHERE ML.nombre_marca = '?';

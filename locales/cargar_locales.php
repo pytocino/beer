@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEERFINDER</title>
     <link rel="icon" href="/ico/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/style2.css">
     <link rel="stylesheet" href="/leaflet/leaflet.css" />
     <script src="/leaflet/leaflet.js"></script>
@@ -18,15 +17,13 @@
 
 <body>
     <header>
-        <nav class="navbar-index">
-            <div class="title-navbar-index">
-                <a href="/beerfinder/index.html">
-                    <img src="./images/beerfinder.png" alt="logo" width="200px">
+            <div class="header">
+                <a href="../index.html">
+                    <img src="/images/beerfinder.png" alt="logo" width="200px">
                 </a>
             </div>
-        </nav>
     </header>
-    <div>
+    <div id="cuerpo">
         <?php
         // Recopila la marca de cerveza del formulario
         if (isset($_GET['marcaCerveza'])) {
@@ -57,7 +54,7 @@
                 echo "<section class='section-php'><div class='title-section-php'><h2>Locales que sirven " . ucwords($marcaCerveza) . ":</h2></div></section>";
                 echo "<section><ul>";
                 while ($row = $result->fetch_assoc()) {
-                    echo "<section class='ul-php'>
+                    echo "<section>
                             <div class='places-php'>
                                 <li>
                                     <h3>" . $row['nombre'] . "</h3><p>Tipo de local: " . ucwords($row['tipo_local']) . "</p><a href='" . $row['direccion'] . "'target='_blank'><button class='where-php' id='direccion'>Como llegar</button></a>

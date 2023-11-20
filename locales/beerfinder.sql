@@ -41,12 +41,10 @@ CREATE TABLE `locales` (
 -- Volcado de datos para la tabla `locales`
 --
 
-INSERT INTO `locales` (`id_local`, `nombre`, `direccion`, `latitud`, `longitud`, `tipo_local`) VALUES
-(1, 'Dower\'s', 'https://maps.app.goo.gl/3RAkPGM2kQW9cWsR7', '37.606043', '-0.981566', 'bar'),
-(2, 'CID Cafetería', 'https://maps.app.goo.gl/MK39qfCeBTHtSkPz9', '37.606218', '-0.982990', 'bar/cafeteria'),
-(3, 'CID Cafetería', 'https://maps.app.goo.gl/MK39qfCeBTHtSkPz9', '37.606218', '-0.982990', 'bar/cafeteria'),
-(4, 'Radio Bar', 'https://maps.app.goo.gl/mWyKsQ1Am5HvrU6r5', '37.599912', '-0.986942', 'pub'),
-(5, 'Radio Bar', 'https://maps.app.goo.gl/mWyKsQ1Am5HvrU6r5', '37.599912', '-0.986942', 'pub');
+INSERT INTO `locales` (`nombre`, `direccion`, `latitud`, `longitud`, `tipo_local`) VALUES
+('Dower''s', 'https://maps.app.goo.gl/3RAkPGM2kQW9cWsR7', '37.606043', '-0.981566', 'bar'),
+('CID Cafetería', 'https://maps.app.goo.gl/MK39qfCeBTHtSkPz9', '37.606218', '-0.982990', 'bar/cafeteria'),
+('Radio Bar', 'https://maps.app.goo.gl/mWyKsQ1Am5HvrU6r5', '37.599912', '-0.986942', 'pub');
 
 -- --------------------------------------------------------
 

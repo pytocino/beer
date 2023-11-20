@@ -25,7 +25,7 @@ CREATE TABLE marcas_locales (
     FOREIGN KEY (id_local) REFERENCES locales(id_local)
 );
 
-DELIMITER //
+-- Modificación del procedimiento para utilizar las columnas existentes en marcas_locales
 CREATE PROCEDURE AgregarMarcaLocal(
     IN nombre_local VARCHAR(255),
     IN nombre_marca VARCHAR(255)
@@ -37,7 +37,6 @@ BEGIN
     -- Buscar el ID del local por su nombre
     SELECT id_local INTO local_id FROM locales WHERE nombre = nombre_local;
 
-    -- Si el local no existe, puedes manejarlo como desees, por ejemplo, lanzar un error.
     IF local_id IS NULL THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El local no existe.';
     END IF;
@@ -45,22 +44,20 @@ BEGIN
     -- Buscar el ID de la marca por su nombre
     SELECT id_marca INTO marca_id FROM marcas_cerveza WHERE nombre = nombre_marca;
 
-    -- Si la marca no existe, puedes manejarlo como desees, por ejemplo, agregarla automáticamente.
     IF marca_id IS NULL THEN
         INSERT INTO marcas_cerveza (nombre) VALUES (nombre_marca);
         SET marca_id = LAST_INSERT_ID();
     END IF;
 
     -- Verificar si ya existe la relación entre la marca y el local
-    IF EXISTS(SELECT 1 FROM marcas_locales WHERE id_local = local_id AND id_marca = marca_id) THEN
+    IF EXISTS(SELECT 1 FROM marcas_locales WHERE id_local = local_id AND nombre_marca = nombre_marca) THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'La relación entre esta marca y local ya existe.';
     ELSE
         -- Agregar la relación entre la marca y el local
-        INSERT INTO marcas_locales (id_local, id_marca) VALUES (local_id, marca_id);
+        INSERT INTO marcas_locales (id_local, nombre_marca) VALUES (local_id, nombre_marca);
     END IF;
 END;
-//
-DELIMITER ;
+
 
 SELECT L.*
 FROM locales L

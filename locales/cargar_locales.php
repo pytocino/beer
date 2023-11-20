@@ -17,97 +17,96 @@
 
 <body>
     <header>
-            <div class="header">
-                <a href="../index.html">
-                    <img src="/images/beerfinder.png" alt="logo" width="200px">
-                </a>
-            </div>
+        <div class="header">
+            <a href="../index.html">
+                <img src="/images/beerfinder.png" alt="logo" width="200px">
+            </a>
+        </div>
     </header>
     <div id="cuerpo">
-        <?php
-        // Recopila la marca de cerveza del formulario
-        if (isset($_GET['marcaCerveza'])) {
-            $marcaCerveza = strtolower($_GET['marcaCerveza']);
+        <section>
+            <?php
+            // Recopila la marca de cerveza del formulario
+            if (isset($_GET['marcaCerveza'])) {
+                $marcaCerveza = strtolower($_GET['marcaCerveza']);
 
-            // Realiza una conexión a la base de datos (reemplaza con tus propias credenciales)
-            $conexion = new mysqli("localhost", "super", "123456", "beerfinder");
+                // Realiza una conexión a la base de datos (reemplaza con tus propias credenciales)
+                $conexion = new mysqli("localhost", "super", "123456", "beerfinder");
 
-            // Verifica la conexión
-            if ($conexion->connect_error) {
-                die("Error de conexión: " . $conexion->connect_error);
-            }
+                // Verifica la conexión
+                if ($conexion->connect_error) {
+                    die("Error de conexión: " . $conexion->connect_error);
+                }
 
-            // Realiza una consulta SQL para buscar locales que sirvan la marca de cerveza
-            $query = "SELECT L.*
+                // Realiza una consulta SQL para buscar locales que sirvan la marca de cerveza
+                $query = "SELECT L.*
             FROM locales L
             JOIN marcas_locales ML ON L.id_local = ML.id_local
             WHERE ML.nombre_marca = ?";
 
-            // Utiliza una declaración preparada para evitar la inyección de SQL
-            $stmt = $conexion->prepare($query);
-            $stmt->bind_param("s", $marcaCerveza);
-            $stmt->execute();
-            $result = $stmt->get_result();
+                // Utiliza una declaración preparada para evitar la inyección de SQL
+                $stmt = $conexion->prepare($query);
+                $stmt->bind_param("s", $marcaCerveza);
+                $stmt->execute();
+                $result = $stmt->get_result();
 
-            // Mostrar los resultados
-            if ($result->num_rows > 0) {
-                echo "<section class='section-php'><div class='title-section-php'><h2>Locales que sirven " . ucwords($marcaCerveza) . ":</h2></div></section>";
-                echo "<section><ul>";
-                while ($row = $result->fetch_assoc()) {
-                    echo "<section>
+                // Mostrar los resultados
+                if ($result->num_rows > 0) {
+                    echo "<div class='section-php'><div class='title-section-php'><h2>Locales que sirven " . ucwords($marcaCerveza) . ":</h2></div>";
+                    echo "<div><ul>";
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<div>
                             <div class='places-php'>
                                 <li>
-                                    <h3>" . $row['nombre'] . "</h3><p>Tipo de local: " . ucwords($row['tipo_local']) . "</p><a href='" . $row['direccion'] . "'target='_blank'><button class='where-php' id='direccion'>Como llegar</button></a>
+                                    <h3>" . $row['nombre'] . "</h3><p>Tipo de local: " . ucwords($row['tipo_local']) . "</p><a href='" . $row['direccion'] . "'target='_blank'><button>Como llegar</button></a>
                                 </li>
                             </div>
-                        </section>";
+                        </div>";
+                    }
+                    echo "</ul></div>";
+                } else {
+                    echo "<p>No se encontraron locales que sirvan $marcaCerveza.</p>";
                 }
-                echo "</ul></section>";
-            } else {
-                echo "<p>No se encontraron locales que sirvan $marcaCerveza.</p>";
-            }
 
 
-            $query2 = "SELECT L.*
+                $query2 = "SELECT L.*
             FROM locales L
             JOIN marcas_locales ML ON L.id_local = ML.id_local
             WHERE ML.nombre_marca = ?";
 
-            // Utiliza una declaración preparada para evitar la inyección de SQL
-            $stmt2 = $conexion->prepare($query2);
-            $stmt2->bind_param("s", $marcaCerveza);
-            $stmt2->execute();
-            $result2 = $stmt2->get_result();
+                // Utiliza una declaración preparada para evitar la inyección de SQL
+                $stmt2 = $conexion->prepare($query2);
+                $stmt2->bind_param("s", $marcaCerveza);
+                $stmt2->execute();
+                $result2 = $stmt2->get_result();
 
-            // Crear un array para almacenar los datos de latitud y longitud
-            $locales = [];
+                // Crear un array para almacenar los datos de latitud y longitud
+                $locales = [];
 
-            // Almacenar los resultados en el array
-            if ($result2->num_rows > 0) {
-                while ($row = $result2->fetch_assoc()) {
-                    $locales[] = $row;
+                // Almacenar los resultados en el array
+                if ($result2->num_rows > 0) {
+                    while ($row = $result2->fetch_assoc()) {
+                        $locales[] = $row;
+                    }
                 }
+                $localescod = json_encode($locales);
+            ?>
+                <script>
+                    let locales = <?= $localescod; ?>;
+                </script>
+            <?php
+                // Cierra la conexión a la base de datos
+                $stmt->close();
+                $conexion->close();
+            } else {
+                echo "No se proporcionó una marca de cerveza válida.";
             }
-            $localescod = json_encode($locales);
-        ?>
-            <script>
-                let locales = <?= $localescod; ?>;
-            </script>
-        <?php
-            // Cierra la conexión a la base de datos
-            $stmt->close();
-            $conexion->close();
-        } else {
-            echo "No se proporcionó una marca de cerveza válida.";
-        }
-        ?>
-        <section>
+            ?>
             <div class="show-map">
                 <button class="where-php" type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
             </div>
-        </section>
-        <section class="centered-map">
-            <div id="mapa"></div>
+            <div class="centered-map">
+            </div>
         </section>
     </div>
     <footer class="footer-index">

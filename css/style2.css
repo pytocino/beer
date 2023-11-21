@@ -254,19 +254,24 @@ footer {
 }
 
 #marcaLocales {
-    margin: 5%;
+    margin: 2%;
 }
 
 ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
 #listado {
     background-color: white;
-    margin: 5%;
+    margin: 2%;
+    height: 150px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    width: 60%;
 }
 
 #listado>* {
@@ -289,13 +294,13 @@ ul {
     margin: 5%;
 }
 
-#mostrarMapa{
-    height: 100%;
+#mostrarMapa {
+    height: 700px;
 }
 
 #mostrarMapa>#mapa {
     display: flex;
-    justify-content: center;    
+    justify-content: center;
 }
 
 #coordenadasBoton {

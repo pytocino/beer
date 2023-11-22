@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+$conexion = new mysqli("localhost", "super", "123456", "beerfinder");
+
+if ($conexion->connect_error) {
+    die("Error en la conexión: " . $conexion->connect_error);
+}
+
+$consulta = "SELECT id_marca, nombre FROM marcas_cerveza ORDER BY nombre";
+$resultado = $conexion->query($consulta);
+$valor = "";
+
+if ($resultado->num_rows > 0) {
+    while ($fila = $resultado->fetch_assoc()) {
+        $valor .= "<option value='" . $fila['nombre'] . "'>" . ucwords($fila['nombre']) . "</option>";
+    }
+}
+
+$conexion->close();
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +36,7 @@
             document.getElementById("menu-desplegable").style.width = "250px";
             document.body.style.overflow = "hidden";
         }
+
         function closeNav() {
             document.getElementById("menu-desplegable").style.width = "0";
             document.body.style.overflow = "scroll";
@@ -26,7 +47,7 @@
 <body>
     <header>
         <div id="header">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="./images/beerfinder.png" alt="logo" width="200px">
             </a>
             <span id="menu" onclick="openNav()">
@@ -44,11 +65,13 @@
         <section>
             <div id="foto">
                 <div id="input">
-                    <form id="query" action="./locales/cargar_locales.php" method="get">
+                    <form id="query" action="./locales/cargar_locales.php" method="GET">
                         <h2>BUSCA LA CERVEZA QUE TE APETEZCA</h2>
                         <div id="contenido-form">
-                            <input type="text" name="marcaCerveza" id="marcaCerveza"
-                                placeholder="Guinnes, Paulanner, Estrella Galicia Black Coupage...">
+                            <select name="marcaCerveza" required>
+                                <option value="" selected>Escoge una</option>
+                                <?= $valor; ?>
+                            </select>
                             <button type="submit">ENCUENTRALA</button>
                         </div>
                     </form>

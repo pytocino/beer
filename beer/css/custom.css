@@ -1,0 +1,41 @@
+ body {
+     font-family: 'Georama', sans-serif;
+ }
+
+ .logo {
+     width: 300px;
+ }
+
+ .background-image {
+     background-image: url("../images/irish-bars-in-stuttgart-germany.jpg");
+     background-size: cover;
+     background-position: 50% 50%;
+     background-attachment: fixed;
+     height: 400px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: white;
+ }
+
+ .form {
+     background-color: rgba(0, 0, 0, 0.8);
+     color: white;
+     border: 1px solid #f1f1f1;
+     width: 90%;
+     padding: 20px;
+     text-align: center;
+     height: auto;
+     border-radius: 3px;
+     font-size: 30px;
+ }
+
+ .imagen-main {
+     width: 100%;
+     max-height: 380px;
+ }
+
+ .fondo {
+     background-color: #F9D857;
+ }
+ 

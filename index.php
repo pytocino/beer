@@ -74,8 +74,7 @@ $conexion->close();
                 <p class="pt-4 pb-4">La cerveza es una bebida alcohólica que ha sido parte de la cultura humana durante miles de
                     años. ¿Sabías que la cerveza primitiva era simplemente harina de cereal fermentada con el
                     mismo sistema que el pan?. Además, los babilonios consideraban la cerveza como el alimento
-                    más
-                    importante y el código del rey Hammurabi dictaba que debía garantizarse a todo ciudadano una
+                    más importante y el código del rey Hammurabi dictaba que debía garantizarse a todo ciudadano una
                     ración diaria de cerveza como parte de la dieta base en Babilonia.
                     <strong>¡Salud!🍻</strong>
                 </p>

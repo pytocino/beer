@@ -8,10 +8,13 @@ if ($conexion->connect_error) {
 $consulta = "SELECT id_marca, nombre FROM marcas_cerveza ORDER BY nombre";
 $resultado = $conexion->query($consulta);
 $valor = "";
+$valor2 = "";
 if ($resultado->num_rows > 0) {
     while ($fila = $resultado->fetch_assoc()) {
         $valor .= "<option value='" . $fila['nombre'] . "'>" . ucwords($fila['nombre']) . "</option>";
+        $valor2 .= $fila['nombre'] . ", ";
     }
+    $valor2 = rtrim($valor2, ", ");
 }
 $conexion->close();
 ?>
@@ -20,6 +23,10 @@ $conexion->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEERFINDER</title>
+    <meta name="description" content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
+    <meta name="description" content="¿Dónde tomarme una <?= $valor2; ?>? ">
+    <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
+    <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="icon" href="ico/favicon.ico" type="image/x-icon">

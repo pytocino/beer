@@ -106,7 +106,7 @@
                 <div>
                     <button type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
                 </div>
-                <div id="mapa"></div>
+                <div class="rounded border border-primary" id="mapa"></div>
             </div>
         </section>
     </div>

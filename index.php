@@ -63,9 +63,14 @@ $conexion->close();
                 <button type="submit" class="btn btn-success fw-semibold">ENCUENTRALA</button>
             </form>
         </div>
+        <div class="row px-2 mt-5">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <img class="rounded img-fluid" src="images/beerfinder2.gif" alt="gif beerfinder">
+            </div>
+        </div>
         <div class="row pt-5 d-flex">
             <div class="col-12 col-md-4">
-                <img class="imagen-main" src="images/imagen1.jpg" alt="">
+                <img class="imagen-main rounded" src="images/imagen1.jpg" alt="">
                 <p class="pt-4 pb-4">La cerveza es una bebida alcohólica que ha sido parte de la cultura humana durante miles de
                     años. ¿Sabías que la cerveza primitiva era simplemente harina de cereal fermentada con el
                     mismo sistema que el pan?. Además, los babilonios consideraban la cerveza como el alimento
@@ -76,7 +81,7 @@ $conexion->close();
                 </p>
             </div>
             <div class="col-12 col-md-4">
-                <img class="imagen-main" src="images/imagen2.jpg" alt="">
+                <img class="imagen-main rounded" src="images/imagen2.jpg" alt="">
                 <p class="pt-4 pb-4">La cerveza, consumida con moderación, puede tener algunos para la salud. Contiene
                     nutrientes beneficiosos como ácido fólico, proteínas, carbohidratos, fibra soluble, fósforo,
                     silicio, potasio y sodio. Además, un estudio concluyó que las personas que consumían cerveza
@@ -86,7 +91,7 @@ $conexion->close();
                 </p>
             </div>
             <div class="col-12 col-md-4">
-                <img class="imagen-main" src="images/coldbeeer.jpg" alt="">
+                <img class="imagen-main rounded" src="images/coldbeeer.jpg" alt="">
                 <p class="pt-4 pb-4">¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consulora), la mejor
                     cerveza del mundo es Corona, de origen mexicano. El valor de esta marca aumentó un 21% hasta
                     alcanzar los 7.000 millones de dólares. Heineken (neerlandesa), por su parte, ocupa el

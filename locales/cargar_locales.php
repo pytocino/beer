@@ -18,7 +18,7 @@
 <body>
     <header>
         <div id="header">
-            <a href="../index.html">
+            <a href="../index.php">
                 <img src="/images/beerfinder.png" alt="logo" width="200px">
             </a>
         </div>

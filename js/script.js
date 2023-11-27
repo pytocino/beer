@@ -1,10 +1,4 @@
 window.onload = function () {
-	function ucwords(str) {
-		return str.replace(/\b\w/g, function (char) {
-			return char.toUpperCase();
-		});
-	}
-
 	function quitarMarca() {
 		const attributionElements = document.querySelectorAll('.leaflet-control-attribution.leaflet-control');
 		attributionElements.forEach((element) => {
@@ -29,9 +23,7 @@ window.onload = function () {
 
 		locales.forEach(function (ubicacion) {
 			const marcador = L.marker([ubicacion.latitud, ubicacion.longitud]).addTo(mapa);
-			const nombreCapitalizado = ucwords(ubicacion.nombre);
-        marcador.bindPopup(`<a href="${ubicacion.direccion}" target="_blank">${nombreCapitalizado}</a>`);
-
+			marcador.bindPopup(`<a href="${ubicacion.direccion}" target="_blank">${ubicacion.nombre}</a>`);
 		});
 
 		quitarMarca();

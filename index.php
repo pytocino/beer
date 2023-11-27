@@ -21,7 +21,7 @@ if ($resultado->num_rows > 0) {
 }
 if ($resultado2->num_rows > 0) {
     while($fila = $resultado2->fetch_assoc()) {
-        $valor3 .= "<option value='" .$fila['nombre'] . "'>" . ucwords($fila['nombre']) . "</option>"
+        $valor3 .= "<option value='" .$fila['nombre'] . "'>" . ucwords($fila['nombre']) . "</option>";
     }
 }
 $conexion->close();

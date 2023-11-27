@@ -26,7 +26,7 @@ if (isset($_GET['locales'])) {
 
     if ($result->num_rows > 0) {
         $valor1 .= "<div class='col-12 text-center mt-5 mb-2'>
-                        <h1>En " . ucwords($locales) . " sirven</h1>
+                        <h1>" . ucwords($locales) . "</h1>
                     </div>";
         while ($row = $result->fetch_assoc()) {
             $valor2 .= "<div class='col-12 col-md-6 mt-4 mb-3'>

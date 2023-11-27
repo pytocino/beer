@@ -30,7 +30,7 @@ if (isset($_GET['locales'])) {
                     </div>";
         while ($row = $result->fetch_assoc()) {
             $valor2 .= "<div class='col-12 col-md-6 mt-4 mb-3'>
-                            <div class='card px-2 mb-2 pb-2 shadow text-center' style='width: 100%;'>
+                            <div class='card px-2 mb-2 shadow text-center' style='width: 100%;'>
                                 <h3 class='card-title mt-2'>" . ucwords($row['nombre_marca']) . "</h3>
                             </div>
                         </div>";

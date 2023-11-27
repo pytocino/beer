@@ -32,7 +32,7 @@ if (isset($_GET['marcaCerveza'])) {
     // Mostrar los resultados
     if ($result->num_rows > 0) {
         $valor1 .= "<div class='col-12 text-center mt-5 mb-2'>
-                        <h1>Locales que sirven " . ucwords($marcaCerveza) . ":</h1>
+                        <h1><strong>" . ucwords($marcaCerveza) . "</strong></h1>
                     </div>";
         while ($row = $result->fetch_assoc()) {
             $valor2 .= "<div class='col-12 col-md-6 mt-4 mb-3'>

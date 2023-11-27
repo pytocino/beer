@@ -1,4 +1,4 @@
- body {
+body {
      font-family: 'Georama', sans-serif;
  }
 
@@ -16,6 +16,7 @@
      align-items: center;
      justify-content: center;
      color: white;
+     resize: both;
  }
 
  .form {

@@ -31,13 +31,13 @@ if (isset($_GET['marcaCerveza'])) {
 
     // Mostrar los resultados
     if ($result->num_rows > 0) {
-        $valor1 .= "<div class='col-12 text-center'>
+        $valor1 .= "<div class='col-12 text-center mt-5 mb-2'>
                         <h1>Locales que sirven " . ucwords($marcaCerveza) . ":</h1>
                     </div>";
         while ($row = $result->fetch_assoc()) {
-            $valor2 .= "<div class='col-12 col-md-6 mt-4'>
+            $valor2 .= "<div class='col-12 col-md-6 mt-4 mb-3'>
                             <div class='card px-2 mb-2 pb-2 shadow text-center' style='width: 100%;'>
-                                <h3 class='card-title mt-2'>" . $row['nombre'] . "</h3>
+                                <h3 class='card-title mt-2'>" . ucwords($row['nombre']) . "</h3>
                                 <p class='card-text'>Tipo de local: " . ucwords($row['tipo_local']) . "</p>
                                 <a class='btn btn-dark' href='" . $row['direccion'] . "'target='_blank'>Como llegar</a>
                             </div>
@@ -81,6 +81,10 @@ if (isset($_GET['marcaCerveza'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEERFINDER</title>
+    <meta name="description" content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
+    <meta name="description" content="¿Donde tomarme una <?= $valor2; ?>? ">
+    <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
+    <meta name="robots" content="index, follow">
     <link rel="icon" href="../ico/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom.css">

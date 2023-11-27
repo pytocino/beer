@@ -2,76 +2,41 @@
 <html lang="en">
 
 <?php
-// Recopila la marca de cerveza del formulario
-if (isset($_GET['marcaCerveza'])) {
-    $marcaCerveza = strtolower($_GET['marcaCerveza']);
+if (isset($_GET['locales'])) {
+    $locales = strtolower($_GET['locales']);
 
-    // Realiza una conexión a la base de datos (reemplaza con tus propias credenciales)
     $conexion = new mysqli("localhost", "super", "123456", "beerfinder");
 
-    // Verifica la conexión
     if ($conexion->connect_error) {
         die("Error de conexión: " . $conexion->connect_error);
     }
 
-    // Realiza una consulta SQL para buscar locales que sirvan la marca de cerveza
-    $query = "SELECT L.*
-            FROM locales L
-            JOIN marcas_locales ML ON L.id_local = ML.id_local
-            WHERE ML.nombre_marca = ?";
+    $query = "SELECT L.nombre AS nombre_local, ML.nombre_marca
+    FROM locales L
+    JOIN marcas_locales ML ON L.id_local = ML.id_local
+    WHERE L.nombre = ?";
 
-    // Utiliza una declaración preparada para evitar la inyección de SQL
     $stmt = $conexion->prepare($query);
-    $stmt->bind_param("s", $marcaCerveza);
+    $stmt->bind_param("s", $locales);
     $stmt->execute();
     $result = $stmt->get_result();
 
     $valor1 = "";
     $valor2 = "";
 
-    // Mostrar los resultados
     if ($result->num_rows > 0) {
         $valor1 .= "<div class='col-12 text-center mt-5 mb-2'>
-                        <h1>Locales que sirven " . ucwords($marcaCerveza) . ":</h1>
+                        <h1>En " . ucwords($locales) . " sirven</h1>
                     </div>";
         while ($row = $result->fetch_assoc()) {
             $valor2 .= "<div class='col-12 col-md-6 mt-4 mb-3'>
                             <div class='card px-2 mb-2 pb-2 shadow text-center' style='width: 100%;'>
-                                <h3 class='card-title mt-2'>" . ucwords($row['nombre']) . "</h3>
-                                <p class='card-text'>Tipo de local: " . ucwords($row['tipo_local']) . "</p>
-                                <a class='btn btn-dark' href='" . $row['direccion'] . "'target='_blank'>Como llegar</a>
+                                <h3 class='card-title mt-2'>" . ucwords($row['nombre_marca']) . "</h3>
                             </div>
                         </div>";
         }
     }
 
-    $query2 = "SELECT L.*
-            FROM locales L
-            JOIN marcas_locales ML ON L.id_local = ML.id_local
-            WHERE ML.nombre_marca = ?";
-
-    // Utiliza una declaración preparada para evitar la inyección de SQL
-    $stmt2 = $conexion->prepare($query2);
-    $stmt2->bind_param("s", $marcaCerveza);
-    $stmt2->execute();
-    $result2 = $stmt2->get_result();
-
-    // Crear un array para almacenar los datos de latitud y longitud
-    $locales = [];
-
-    // Almacenar los resultados en el array
-    if ($result2->num_rows > 0) {
-        while ($row = $result2->fetch_assoc()) {
-            $locales[] = $row;
-        }
-    }
-    $localescod = json_encode($locales);
-?>
-    <script>
-        let locales = <?= $localescod; ?>;
-    </script>
-<?php
-    // Cierra la conexión a la base de datos
     $stmt->close();
     $conexion->close();
 }
@@ -110,12 +75,6 @@ if (isset($_GET['marcaCerveza'])) {
         <div class="row">
             <?= $valor1; ?>
             <?= $valor2; ?>
-        </div>
-        <div class="row mt-4">
-            <div class="col-12">
-                <button class="btn btn-dark" type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
-                <div class="mt-4 mb-4" id="mapa" style="height:400px;"></div>
-            </div>
         </div>
     </main>
     <footer class="bg-black text-white text-center py-3">

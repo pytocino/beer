@@ -79,7 +79,7 @@ $conexion->close();
             </li>
         </ul>
         <div class="background-image tab-content d-flex" id="mytabcontent">
-            <div class="tab-pane fade show active" id="cervezas" role="tabpanel" aria-labelledby="cervezas-tab">
+            <div class="mi-div tab-pane fade show active" id="cervezas" role="tabpanel" aria-labelledby="cervezas-tab">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <form class="form w-60 form-control-lg" action="locales/cargar_locales.php" method="get">
                         <div class="mb-3">
@@ -94,7 +94,7 @@ $conexion->close();
                     </form>
                 </div>
             </div>
-            <div class="tab-pane fade" id="locales" role="tabpanel" aria-labelledby="locales-tab">
+            <div class="mi-div tab-pane fade" id="locales" role="tabpanel" aria-labelledby="locales-tab">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <form class="form w-60 form-control-lg" action="locales/cargar_cervezas.php" method="get">
                         <div class="mb-3">

@@ -71,11 +71,11 @@ $conexion->close();
         <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="cervezas-tab" data-bs-toggle="tab" data-bs-target="#cervezas"
-                    type="button" role="tab" aria-controls="cervezas" aria-selected="true">CERVEZAS</button>
+                    type="button" role="tab" aria-controls="cervezas" aria-selected="true"><strong>CERVEZAS</strong></button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="locales-tab" data-bs-toggle="tab" data-bs-target="#locales" type="button"
-                    role="tab" aria-controls="locales" aria-selected="false">LOCALES</button>
+                    role="tab" aria-controls="locales" aria-selected="false"><strong>LOCALES</strong></button>
             </li>
         </ul>
         <div class="background-image tab-content d-flex" id="mytabcontent">

@@ -20,8 +20,8 @@ if ($resultado->num_rows > 0) {
     $valor2 = rtrim($valor2, ", ");
 }
 if ($resultado2->num_rows > 0) {
-    while($fila = $resultado2->fetch_assoc()) {
-        $valor3 .= "<option value='" .$fila['nombre'] . "'>" . ucwords($fila['nombre']) . "</option>";
+    while ($fila = $resultado2->fetch_assoc()) {
+        $valor3 .= "<option value='" . $fila['nombre'] . "'>" . ucwords($fila['nombre']) . "</option>";
     }
 }
 $conexion->close();
@@ -31,11 +31,10 @@ $conexion->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEERFINDER</title>
-    <meta name="description"
-        content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
     <meta name="description" content="¿Donde tomarme una <?= $valor2; ?>? ">
-    <meta name="keywords"
-        content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
+    <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
@@ -70,12 +69,10 @@ $conexion->close();
     <main class="px-2">
         <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="cervezas-tab" data-bs-toggle="tab" data-bs-target="#cervezas"
-                    type="button" role="tab" aria-controls="cervezas" aria-selected="true"><strong>CERVEZAS</strong></button>
+                <button class="nav-link active" id="cervezas-tab" data-bs-toggle="tab" data-bs-target="#cervezas" type="button" role="tab" aria-controls="cervezas" aria-selected="true"><strong>CERVEZAS</strong></button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="locales-tab" data-bs-toggle="tab" data-bs-target="#locales" type="button"
-                    role="tab" aria-controls="locales" aria-selected="false"><strong>LOCALES</strong></button>
+                <button class="nav-link" id="locales-tab" data-bs-toggle="tab" data-bs-target="#locales" type="button" role="tab" aria-controls="locales" aria-selected="false"><strong>LOCALES</strong></button>
             </li>
         </ul>
         <div class="background-image tab-content d-flex" id="mytabcontent">
@@ -162,13 +159,13 @@ $conexion->close();
     </footer>
     <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             let ageVerificationModal = new bootstrap.Modal(document.getElementById('ageVerificationModal'));
             ageVerificationModal.show();
-            document.getElementById('yesBtn').addEventListener('click', function () {
+            document.getElementById('yesBtn').addEventListener('click', function() {
                 ageVerificationModal.hide();
             });
-            document.getElementById('noBtn').addEventListener('click', function () {
+            document.getElementById('noBtn').addEventListener('click', function() {
                 window.history.back();
             });
         });

@@ -46,6 +46,7 @@ if (isset($_GET['locales'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEERFINDER</title>
+    <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
     <meta name="description" content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
     <meta name="description" content="¿Donde tomarme una <?= $valor2; ?>? ">
     <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">

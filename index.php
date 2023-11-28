@@ -79,9 +79,9 @@ $conexion->close();
             </li>
         </ul>
         <div class="background-image tab-content d-flex" id="mytabcontent">
-            <div class="mi-div tab-pane fade show active" id="cervezas" role="tabpanel" aria-labelledby="cervezas-tab">
+            <div class="tab-pane fade show active" id="cervezas" role="tabpanel" aria-labelledby="cervezas-tab">
                 <div class="d-flex justify-content-center align-items-center h-100">
-                    <form class="form w-60 form-control-lg" action="locales/cargar_locales.php" method="get">
+                    <form class="mi-div form w-60 form-control-lg" action="locales/cargar_locales.php" method="get">
                         <div class="mb-3">
                             <label for="selectOptionCervezas" class="form-label fw-semibold display-5">¿QUE CERVEZA TE
                                 APETECE?</label>
@@ -94,9 +94,9 @@ $conexion->close();
                     </form>
                 </div>
             </div>
-            <div class="mi-div tab-pane fade" id="locales" role="tabpanel" aria-labelledby="locales-tab">
+            <div class="tab-pane fade" id="locales" role="tabpanel" aria-labelledby="locales-tab">
                 <div class="d-flex justify-content-center align-items-center h-100">
-                    <form class="form w-60 form-control-lg" action="locales/cargar_cervezas.php" method="get">
+                    <form class="mi-div form w-60 form-control-lg" action="locales/cargar_cervezas.php" method="get">
                         <div class="mb-3">
                             <label for="selectOptionLocales" class="form-label fw-semibold display-5">¿SABES QUE CERVEZA
                                 VENDEN DONDE VAS?</label>

@@ -30,7 +30,7 @@ $conexion->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEERFINDER</title>
+    <title>BEERFINDER - Localizador de cervezas</title>
     <link rel="icon" type="image/png" href="ico/favicon-16x16.png">
     <link rel="icon" type="image/png" href="ico/favicon-32x32.png">
     <meta name="description" content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
@@ -115,7 +115,7 @@ $conexion->close();
         </div>
         <div class="row pt-5 d-flex">
             <div class="col-12 col-md-4">
-                <img class="imagen-main rounded" src="images/imagen1.jpg" alt="">
+                <img class="imagen-main rounded" src="images/imagen1.jpg" alt="tirador de cereveza">
                 <p class="pt-4 pb-4">La cerveza es una bebida alcohólica que ha sido parte de la cultura humana
                     durante
                     miles de
@@ -127,7 +127,7 @@ $conexion->close();
                 </p>
             </div>
             <div class="col-12 col-md-4">
-                <img class="imagen-main rounded" src="images/imagen2.jpg" alt="">
+                <img class="imagen-main rounded" src="images/imagen2.jpg" alt="amigos bebiendo cerveza">
                 <p class="pt-4 pb-4">La cerveza, consumida con moderación, puede tener algunos para la salud.
                     Contiene
                     nutrientes beneficiosos como ácido fólico, proteínas, carbohidratos, fibra soluble, fósforo,
@@ -138,7 +138,7 @@ $conexion->close();
                 </p>
             </div>
             <div class="col-12 col-md-4">
-                <img class="imagen-main rounded" src="images/coldbeeer.jpg" alt="">
+                <img class="imagen-main rounded" src="images/coldbeeer.jpg" alt="cerveza fria">
                 <p class="pt-4 pb-4">¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consulora), la
                     mejor
                     cerveza del mundo es Corona, de origen mexicano. El valor de esta marca aumentó un 21% hasta

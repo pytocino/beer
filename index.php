@@ -33,8 +33,7 @@ $conexion->close();
     <title>BEERFINDER - Localizador de cervezas</title>
     <link rel="icon" type="image/png" href="ico/favicon-16x16.png">
     <link rel="icon" type="image/png" href="ico/favicon-32x32.png">
-    <meta name="description" content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
-    <meta name="description" content="¿Donde tomarme una <?= $valor2; ?>? ">
+    <meta name="description" content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven! ¿Donde tomarme una <?= $valor2; ?>?">
     <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">

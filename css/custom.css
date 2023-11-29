@@ -11,7 +11,8 @@ body {
     background-size: cover;
     background-position: 50% 50%;
     background-attachment: fixed;
-    border-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     height: 400px;
     display: flex;
     align-items: center;

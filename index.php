@@ -61,7 +61,7 @@ $conexion->close();
     <header class="d-flex justify-content-center">
         <nav class="navbar navbar-expand-sm m-4">
             <a href="index.php">
-                <img class="logo img-fluid mx-auto d-block" src="images/beerfinder.png" alt="logo beerfinder">
+                <img class="logo img-fluid mx-auto d-block" src="images/beerfinder.svg" alt="logo beerfinder">
             </a>
         </nav>
     </header>

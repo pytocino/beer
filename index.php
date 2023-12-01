@@ -44,7 +44,7 @@ $conexion->close();
 </head>
 
 <body>
-    <!-- <div class="modal fade" id="ageVerificationModal" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal fade" id="ageVerificationModal" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-dialog-centered text-center">
             <div class="modal-content">
                 <div class="modal-header">
@@ -57,7 +57,7 @@ $conexion->close();
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <header class="d-flex justify-content-center">
         <nav class="navbar navbar-expand-sm m-4">
             <a href="index.php">
@@ -157,7 +157,7 @@ $conexion->close();
         <h3>© 2023 BEERFINDER<br>Todos los derechos reservados.</h3>
     </footer>
     <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
             let ageVerificationModal = new bootstrap.Modal(document.getElementById('ageVerificationModal'));
             ageVerificationModal.show();
@@ -168,7 +168,7 @@ $conexion->close();
                 window.history.back();
             });
         });
-    </script> -->
+    </script>
 </body>
 
 </html>

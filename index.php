@@ -51,70 +51,68 @@ $conexion->close();
                     <h5 class="modal-title text-bg-warning">¿Eres mayor de edad?</h5>
                 </div>
                 <div class="modal-body">
-                    <p>Para acceder a este sitio necesitas ser mayor de edad.</p>
+                    <p>Para acceder a este sitio, necesitas ser mayor de edad.</p>
                     <button type="button" class="btn btn-success" id="yesBtn">Sí</button>
                     <button type="button" class="btn btn-danger" id="noBtn" data-bs-dismiss="modal">No</button>
                 </div>
             </div>
         </div>
     </div>
-    <header class="d-flex justify-content-center">
-        <nav class="navbar navbar-expand-sm m-4">
-            <a href="index.php">
-                <img class="logo img-fluid mx-auto d-block" src="images/beerfinder.svg" alt="logo beerfinder">
-            </a>
-        </nav>
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand justify-content-center my-4 px-3">
+                    <a href="index.php">
+                        <img class="img-fluid" src="images/beerfinder.svg" alt="logo beerfinder">
+                    </a>
+                </nav>
+            </div>
+        </div>
     </header>
-    <main class="px-2">
-        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="cervezas-tab" data-bs-toggle="tab" data-bs-target="#cervezas" type="button" role="tab" aria-controls="cervezas" aria-selected="true"><strong>CERVEZAS</strong></button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="locales-tab" data-bs-toggle="tab" data-bs-target="#locales" type="button" role="tab" aria-controls="locales" aria-selected="false"><strong>LOCALES</strong></button>
-            </li>
-        </ul>
-        <div class="background-image tab-content d-flex" id="mytabcontent">
-            <div class="tab-pane fade show active" id="cervezas" role="tabpanel" aria-labelledby="cervezas-tab">
-                <div class="d-flex justify-content-center align-items-center h-100">
-                    <form class="form form-control-lg" action="locales/cargar_locales.php" method="get">
-                        <div class="mb-3">
+    <main class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+                <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="cervezas-tab" data-bs-toggle="tab" data-bs-target="#cervezas" type="button" role="tab" aria-controls="cervezas" aria-selected="true"><strong>BUSCAR CERVEZAS</strong></button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="locales-tab" data-bs-toggle="tab" data-bs-target="#locales" type="button" role="tab" aria-controls="locales" aria-selected="false"><strong>BUSCAR
+                                LOCALES</strong></button>
+                    </li>
+                </ul>
+                <div class="background-image tab-content d-flex justify-content-center align-items-center" id="mytabcontent">
+                    <div class="tab-pane fade show active d-flex justify-content-center align-items-center" id="cervezas" role="tabpanel" aria-labelledby="cervezas-tab">
+                        <form class="form form-control text-center" action="locales/cargar_locales.php" method="get">
                             <label for="selectOptionCervezas" class="form-label fw-semibold display-5">¿QUE CERVEZA TE
                                 APETECE?</label>
-                            <select class="form-select" id="selectOptionCervezas" name="marcaCerveza" required>
+                            <select class="form-select my-2" id="selectOptionCervezas" name="marcaCerveza" required>
                                 <option class="text-center" value="" selected>Escoge una</option>
                                 <?= $valor; ?>
                             </select>
-                        </div>
-                        <button type="submit" class="btn btn-success fw-semibold">ENCUENTRALA</button>
-                    </form>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="locales" role="tabpanel" aria-labelledby="locales-tab">
-                <div class="d-flex justify-content-center align-items-center h-100">
-                    <form class="form form-control-lg" action="locales/cargar_cervezas.php" method="get">
-                        <div class="mb-3">
+                            <button type="submit" class="btn btn-success fw-semibold">ENCUENTRALA</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade d-flex justify-content-center align-items-center" id="locales" role="tabpanel" aria-labelledby="locales-tab">
+                        <form class="form form-control text-center" action="locales/cargar_cervezas.php" method="get">
                             <label for="selectOptionLocales" class="form-label fw-semibold display-5">¿SABES QUE CERVEZA
                                 VENDEN DONDE VAS?</label>
-                            <select class="form-select" id="selectOptionLocales" name="locales" required>
+                            <select class="form-select my-2" id="selectOptionLocales" name="locales" required>
                                 <option class="text-center" value="" selected>¿Donde vas?</option>
                                 <?= $valor3; ?>
                             </select>
-                        </div>
-                        <button type="submit" class="btn btn-success fw-semibold">DESCUBRELO</button>
-                    </form>
+                            <button type="submit" class="btn btn-success fw-semibold">DESCUBRELO</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="row px-2 mt-5">
-            <div class="col-12 d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center my-5">
                 <img class="rounded img-fluid" src="images/beerfinder2.gif" alt="gif beerfinder">
             </div>
-        </div>
-        <div class="row pt-5 d-flex">
-            <div class="col-12 col-md-4">
-                <img class="imagen-main rounded" src="images/imagen1.jpg" alt="tirador de cereveza">
+            <div class="col-12 col-sm-6 col-md-4 my-2">
+                <img class="img-fluid rounded" src="images/imagen1.jpg" alt="tirador de cereveza">
                 <p class="pt-4 pb-4">La cerveza es una bebida alcohólica que ha sido parte de la cultura humana
                     durante
                     miles de
@@ -125,8 +123,8 @@ $conexion->close();
                     <strong>¡Salud!🍻</strong>
                 </p>
             </div>
-            <div class="col-12 col-md-4">
-                <img class="imagen-main rounded" src="images/imagen2.jpg" alt="amigos bebiendo cerveza">
+            <div class="col-12 col-sm-6 col-md-4 my-2">
+                <img class="img-fluid rounded" src="images/imagen2.jpg" alt="tirador de cereveza">
                 <p class="pt-4 pb-4">La cerveza, consumida con moderación, puede tener algunos para la salud.
                     Contiene
                     nutrientes beneficiosos como ácido fólico, proteínas, carbohidratos, fibra soluble, fósforo,
@@ -136,8 +134,8 @@ $conexion->close();
                     <strong>¡Salud!🍻</strong>
                 </p>
             </div>
-            <div class="col-12 col-md-4">
-                <img class="imagen-main rounded" src="images/coldbeeer.jpg" alt="cerveza fria">
+            <div class="col-12 col-sm-6 col-md-4 my-2">
+                <img class="img-fluid rounded" src="images/coldbeeer.jpg" alt="tirador de cereveza">
                 <p class="pt-4 pb-4">¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consulora), la
                     mejor
                     cerveza del mundo es Corona, de origen mexicano. El valor de esta marca aumentó un 21% hasta
@@ -148,15 +146,34 @@ $conexion->close();
                 </p>
             </div>
         </div>
-        <div id="contact">
-            <h2>CONTACTO</h2>
-            <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
+        <div class="row">
+            <div class="col-12">
+                <form class="form-check" action="mailto:administracion@beerfinder.es" method="post" enctype="text/plain">
+                    <h2>CONTACTO</h2>
+                    <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
+                    <div class="form-group mb-2">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea class="form-control" id="mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="w-25 btn btn-primary">Enviar</button>
+                </form>
+            </div>
         </div>
     </main>
-    <footer class="bg-black text-center text-white py-3">
-        <h3>© 2023 BEERFINDER<br>Todos los derechos reservados.</h3>
+    <footer class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-12 bg-black">
+                <div class="text-center text-white py-4">
+                    <h3>© 2023 BEERFINDER<br>Todos los derechos reservados.</h3>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let ageVerificationModal = new bootstrap.Modal(document.getElementById('ageVerificationModal'));

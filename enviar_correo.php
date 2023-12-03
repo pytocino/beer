@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers = "From: $email\r\nReply-To: $email\r\n";
 
     mail($para, $titulo, $contenido, $headers);
-    header('Location: index.php');
     exit;
 }
 ?>

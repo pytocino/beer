@@ -27,6 +27,10 @@ body {
 
 .fondo {
     background-color: #F9D857;
-    min-height: 600px;
+    height: auto;
+}
+
+.mapa {
+    width: 85%;
     height: auto;
 }

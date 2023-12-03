@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $mensaje = $_POST['mensaje'];
 
-    $para = 'administracion@beerfinder.es';
+    $para = 'admin@beerfinder.es';
 
     $titulo = 'Mensaje para BEERFINDER';
     $contenido = "Nombre: $nombre\nEmail: $email\nMensaje: $mensaje";

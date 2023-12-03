@@ -127,16 +127,20 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
         </div>
         <div class="row">
             <div class="col-12">
-                <form class="form-check" action="mailto:administracion@beerfinder.es" method="post" enctype="text/plain">
+                <form class="form-check" action="correo/enviar_correo.php" method="post" enctype="text/plain">
                     <h2>CONTACTO</h2>
                     <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
                     <div class="form-group mb-2">
                         <label for="nombre">Nombre:</label>
-                        <input type="text" class="form-control" id="nombre">
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="email">Email:</label>
+                        <input type="text" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="form-group mb-4">
                         <label for="mensaje">Mensaje:</label>
-                        <textarea class="form-control" id="mensaje" required></textarea>
+                        <textarea class="form-control" id="mensaje" name="mensaje" required></textarea>
                     </div>
                     <button type="submit" class="w-25 btn btn-primary">Enviar</button>
                 </form>

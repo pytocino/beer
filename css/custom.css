@@ -6,7 +6,7 @@ body {
 
 
 .background-image {
-    background-image: url("images/irish-bars-in-stuttgart-germany.jpg");
+    background-image: url("../images/irish-bars-in-stuttgart-germany.jpg");
     background-size: cover;
     background-position: 50% 50%;
     background-attachment: fixed;

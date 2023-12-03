@@ -99,16 +99,18 @@ if (isset($_GET['marcaCerveza'])) {
 </head>
 
 <body>
-    <header class="d-flex justify-content-center">
+<header class="container-fluid">
         <div class="row">
-            <nav class="navbar navbar-expand-sm m-4">
-                <a href="../index.php">
-                    <img class="logo img-fluid mx-auto d-block" src="../images/beerfinder.svg" alt="logo beerfinder">
-                </a>
-            </nav>
+            <div class="col-12">
+                <nav class="navbar navbar-expand justify-content-center my-4 px-3">
+                    <a href="index.php">
+                        <img class="img-fluid" src="../images/beerfinder.svg" alt="logo beerfinder">
+                    </a>
+                </nav>
+            </div>
         </div>
     </header>
-    <main class="fondo px-4">
+    <main class="container fondo px-4">
         <div class="row">
             <?= $valor1; ?>
             <?= $valor2; ?>
@@ -120,8 +122,14 @@ if (isset($_GET['marcaCerveza'])) {
             </div>
         </div>
     </main>
-    <footer class="bg-black text-white text-center py-3">
-        <h3>© 2023 BeerFinder.<br>Todos los derechos reservados.</h3>
+    <footer class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-12 bg-black">
+                <div class="text-center text-white py-4">
+                    <h3>© 2023 BEERFINDER<br>Todos los derechos reservados.</h3>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="../bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -142,7 +142,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                         <label for="mensaje">Mensaje:</label>
                         <textarea class="form-control" id="mensaje" name="mensaje" required></textarea>
                     </div>
-                    <button type="submit" class="w-25 btn btn-primary">Enviar</button>
+                    <button type="submit" class="w-25 btn btn-primary" disabled>Enviar</button>
                 </form>
             </div>
         </div>

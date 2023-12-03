@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $mensaje = $_POST['mensaje'];
 
-    $para = 'administracion@beerfinder.es';
+    $para = 'pedrodavidg88@gmail.com';
 
     $titulo = 'Mensaje para BEERFINDER';
     $contenido = "Nombre: $nombre\nEmail: $email\nMensaje: $mensaje";
@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers = "From: $email\r\nReply-To: $email\r\n";
 
     mail($para, $titulo, $contenido, $headers);
+    header('Location: index.php');
     exit;
 }
 ?>

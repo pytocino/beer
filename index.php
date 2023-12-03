@@ -15,6 +15,8 @@ $valor3 = "";
 if ($resultado->num_rows > 0) {
     while ($fila = $resultado->fetch_assoc()) {
         $valor .= "<option value='" . $fila['nombre'] . "'>" . ucwords($fila['nombre']) . "</option>";
+    }
+    while ($fila = $resultado->fetch_assoc()) {
         $valor2 .= $fila['nombre'] . ", ";
     }
     $valor2 = rtrim($valor2, ", ");

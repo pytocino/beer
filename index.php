@@ -156,10 +156,10 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
         </div>
         <div class="row">
             <div class="col-12">
-                <form class="form-check" action="mailto:administracion@beerfinder.es" method="post" enctype="text/plain">
-                    <h2>CONTACTO</h2>
-                    <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
-                    <div class="form-group mb-2">
+                <!-- <form class="form-check" action="mailto:administracion@beerfinder.es" method="post" enctype="text/plain"> -->
+                <h2>CONTACTO</h2>
+                <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
+                <!-- <div class="form-group mb-2">
                         <label for="nombre">Nombre:</label>
                         <input type="text" class="form-control" id="nombre">
                     </div>
@@ -168,7 +168,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                         <textarea class="form-control" id="mensaje" required></textarea>
                     </div>
                     <button type="submit" class="w-25 btn btn-primary">Enviar</button>
-                </form>
+                </form> -->
             </div>
         </div>
     </main>

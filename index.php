@@ -127,7 +127,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
         </div>
         <div class="row">
             <div class="col-12">
-                <form class="form-check" action="correo/enviar_correo.php" method="post" enctype="text/plain">
+                <form class="form-check" action="enviar_correo.php" method="post" enctype="text/plain">
                     <h2>CONTACTO</h2>
                     <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
                     <div class="form-group mb-2">

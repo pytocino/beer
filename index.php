@@ -23,15 +23,7 @@ if ($resultado->num_rows > 0) {
 } else {
     echo "No se encontraron resultados";
 }
-if ($resultado2->num_rows > 0) {
-    while ($fila = $resultado2->fetch_assoc()) {
-        $valor3 .= "<option value='" . $fila['nombre'] . "'>" . ucwords($fila['nombre']) . "</option>";
-    }
-} else {
-    echo "No se encontraron resultados";
-}
 $conexion->close();
-
 $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven! ¿Donde tomarme una " . $valor2 . "?";
 ?>
 
@@ -78,42 +70,21 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
         </div>
     </header>
     <main class="container">
-        <div class="row justify-content-center align-items-center">
+        <div class="row">
             <div class="col-12">
-                <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="cervezas-tab" data-bs-toggle="tab" data-bs-target="#cervezas" type="button" role="tab" aria-controls="cervezas" aria-selected="true"><strong>BUSCAR CERVEZAS</strong></button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="locales-tab" data-bs-toggle="tab" data-bs-target="#locales" type="button" role="tab" aria-controls="locales" aria-selected="false"><strong>BUSCAR
-                                LOCALES</strong></button>
-                    </li>
-                </ul>
-                <div class="background-image tab-content d-flex justify-content-center align-items-center" id="mytabcontent">
-                    <div class="tab-pane fade show active d-flex justify-content-center align-items-center" id="cervezas" role="tabpanel" aria-labelledby="cervezas-tab">
-                        <form class="form form-control text-center" action="locales/cargar_locales.php" method="get">
-                            <label for="selectOptionCervezas" class="form-label fw-semibold display-5">¿QUE CERVEZA TE
-                                APETECE?</label>
-                            <select class="form-select my-2" id="selectOptionCervezas" name="marcaCerveza" required>
-                                <option class="text-center" value="" selected>Escoge una</option>
-                                <?= $valor; ?>
-                            </select>
-                            <button type="submit" class="btn btn-success fw-semibold">ENCUENTRALA</button>
-                        </form>
-                    </div>
-                    <div class="tab-pane fade d-flex justify-content-center align-items-center" id="locales" role="tabpanel" aria-labelledby="locales-tab">
-                        <form class="form form-control text-center" action="locales/cargar_cervezas.php" method="get">
-                            <label for="selectOptionLocales" class="form-label fw-semibold display-5">¿SABES QUE CERVEZA
-                                VENDEN DONDE VAS?</label>
-                            <select class="form-select my-2" id="selectOptionLocales" name="locales" required>
-                                <option class="text-center" value="" selected>¿Donde vas?</option>
-                                <?= $valor3; ?>
-                            </select>
-                            <button type="submit" class="btn btn-success fw-semibold">DESCUBRELO</button>
-                        </form>
-                    </div>
+                <div class="background-image d-flex justify-content-center align-items-center">
+                    <form class="form form-control text-center" action="locales/cargar_locales.php" method="get">
+                        <label for="selectOptionCervezas" class="form-label fw-semibold display-5">¿QUE CERVEZA TE
+                            APETECE?</label>
+                        <select class="form-select my-2" id="selectOptionCervezas" name="marcaCerveza" required>
+                            <option class="text-center" value="" selected>Escoge una</option>
+                            <?= $valor; ?>
+                        </select>
+                        <button type="submit" class="btn btn-success fw-semibold">ENCUENTRALA</button>
+                    </form>
                 </div>
             </div>
+        </div>
         </div>
         <div class="row">
             <div class="col-12 d-flex justify-content-center my-5">
@@ -156,10 +127,10 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
         </div>
         <div class="row">
             <div class="col-12">
-                <!-- <form class="form-check" action="mailto:administracion@beerfinder.es" method="post" enctype="text/plain"> -->
-                <h2>CONTACTO</h2>
-                <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
-                <!-- <div class="form-group mb-2">
+                <form class="form-check" action="mailto:administracion@beerfinder.es" method="post" enctype="text/plain">
+                    <h2>CONTACTO</h2>
+                    <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos!</p>
+                    <div class="form-group mb-2">
                         <label for="nombre">Nombre:</label>
                         <input type="text" class="form-control" id="nombre">
                     </div>
@@ -168,7 +139,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                         <textarea class="form-control" id="mensaje" required></textarea>
                     </div>
                     <button type="submit" class="w-25 btn btn-primary">Enviar</button>
-                </form> -->
+                </form>
             </div>
         </div>
     </main>

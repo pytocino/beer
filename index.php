@@ -124,7 +124,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                 </p>
             </div>
             <div class="col-12 col-sm-6 col-md-4 my-2">
-                <img class="img-fluid rounded" src="images/coldbeeer.jpg" alt="tirador de cereveza">
+                <img class="img-fluid rounded" src="images/coldbeer.jpg" alt="tirador de cereveza">
                 <p class="pt-4 pb-4">¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consulora), la
                     mejor
                     cerveza del mundo es Corona, de origen mexicano. El valor de esta marca aumentó un 21% hasta

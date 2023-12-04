@@ -14,14 +14,24 @@ if (isset($_GET['marcaCerveza'])) {
         die("Error de conexión: " . $conexion->connect_error);
     }
 
-    // Consulta SQL para buscar locales que sirvan la marca de cerveza con paginación
+    // Definir el número de resultados por página
+    $resultadosPorPagina = 10;
+
+    // Obtener el número de página actual de la URL
+    $paginaActual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+
+    // Calcular el desplazamiento para la consulta SQL
+    $offset = ($paginaActual - 1) * $resultadosPorPagina;
+
+    // Consulta SQL con limit y offset para la paginación
     $query = "SELECT L.*
             FROM locales L
             JOIN marcas_locales ML ON L.id_local = ML.id_local
-            WHERE ML.nombre_marca = ?";
+            WHERE ML.nombre_marca = ?
+            LIMIT ?, ?";
 
     $stmt = $conexion->prepare($query);
-    $stmt->bind_param("s", $marcaCerveza);
+    $stmt->bind_param("sii", $marcaCerveza, $offset, $resultadosPorPagina);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -43,6 +53,20 @@ if (isset($_GET['marcaCerveza'])) {
                     </div>";
         }
     }
+
+    // Obtener el número total de resultados
+    $totalResultados = $result->num_rows;
+
+    // Calcular el número total de páginas
+    $totalPaginas = ceil($totalResultados / $resultadosPorPagina);
+
+    // Generar la paginación HTML
+    $paginationHTML = "<div class='col-12 text-center mt-3'>";
+    for ($i = 1; $i <= $totalPaginas; $i++) {
+        $paginationHTML .= "<a href='?marcaCerveza=$marcaCerveza&pagina=$i'>$i</a>";
+        $paginationHTML .= " | ";
+    }
+    $paginationHTML .= "</div>";
 
     $query2 = "SELECT L.*
             FROM locales L
@@ -114,7 +138,7 @@ if (isset($_GET['marcaCerveza'])) {
             <?= $valor1; ?>
             <?= $valor2; ?>
         </div>
-        <?= $paginacion; ?>
+        <?= $paginacionHTML; ?>
         <div class="row mt-4">
             <div class="col-12">
                 <button class="btn btn-dark" type="submit" id="coordenadasBoton">Mostrar en el mapa</button>

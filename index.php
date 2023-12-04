@@ -86,7 +86,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                     <form class="form form-control text-center" action="locales/cargar_locales.php" method="get">
                         <label for="selectOptionCervezas" class="form-label fw-semibold display-5 my-3">¿QUE CERVEZA TE
                             APETECE?</label>
-                        <select class="form-select my-3" id="selectOptionCervezas" name="marcaCerveza" required>
+                        <select class="form-select my-3 w-80" id="selectOptionCervezas" name="marcaCerveza" required>
                             <option class="text-center" value="" selected>Escoge una</option>
                             <?= $valor; ?>
                         </select>

@@ -59,6 +59,9 @@ if (isset($_GET['marcaCerveza'])) {
 
     // Calcular el número total de páginas
     $totalPaginas = ceil($totalResultados / $resultadosPorPagina);
+    // Después de calcular el número total de páginas
+    echo "Total de páginas: " . $totalPaginas;
+
 
     // Generar la paginación HTML
     $paginacionHTML = "<nav aria-label='paginacion cervezas'><ul class='pagination'>";

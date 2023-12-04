@@ -15,7 +15,7 @@ if (isset($_GET['marcaCerveza'])) {
     }
 
     // Definir el número de resultados por página
-    $resultadosPorPagina = 10;
+    $resultadosPorPagina = 6;
 
     // Obtener el número de página actual de la URL
     $paginaActual = $_GET['pagina'];

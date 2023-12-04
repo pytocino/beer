@@ -68,7 +68,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
             </div>
         </div>
     </div>
-    <header class="container-fluid fixed-top">
+    <header class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand justify-content-center my-4 px-3">

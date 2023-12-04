@@ -29,3 +29,14 @@ body {
     background-color: white;
     background-image: linear-gradient(white 11%, #ffcc00 52%);
 }
+
+.custom-pagination {
+    background-color: black;
+    color: white;
+}
+
+.custom-pagination:hover,
+.custom-pagination:focus {
+    background-color: #333;
+    color: white;
+}

@@ -84,14 +84,14 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
             <div class="col-12">
                 <div class="background-image d-flex justify-content-center align-items-center">
                     <form class="form form-control text-center" action="locales/cargar_locales.php" method="get">
-                        <label for="selectOptionCervezas" class="form-label fw-semibold display-5">¿QUE CERVEZA TE
+                        <label for="selectOptionCervezas" class="form-label fw-semibold display-5 my-2">¿QUE CERVEZA TE
                             APETECE?</label>
                         <select class="form-select my-2" id="selectOptionCervezas" name="marcaCerveza" required>
                             <option class="text-center" value="" selected>Escoge una</option>
                             <?= $valor; ?>
                         </select>
                         <input type="hidden" name="pagina" value="<?= isset($_GET['pagina']) ? $_GET['pagina'] : 1 ?>">
-                        <button type="submit" class="btn btn-success fw-semibold">ENCUENTRALA</button>
+                        <button type="submit" class="btn btn-success fw-semibold mt-2">ENCUENTRALA</button>
                     </form>
                 </div>
             </div>

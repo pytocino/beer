@@ -170,16 +170,23 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
     <script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let ageVerificationModal = new bootstrap.Modal(document.getElementById('ageVerificationModal'));
-            ageVerificationModal.show();
-            document.getElementById('yesBtn').addEventListener('click', function() {
-                ageVerificationModal.hide();
-            });
-            document.getElementById('noBtn').addEventListener('click', function() {
-                window.history.back();
-            });
+            if (document.cookie.indexOf('modal_visto=1') === -1) {
+                let ageVerificationModal = new bootstrap.Modal(document.getElementById('ageVerificationModal'));
+                ageVerificationModal.show();
+
+                // Agrega eventos a los botones del modal
+                document.getElementById('yesBtn').addEventListener('click', function() {
+                    ageVerificationModal.hide();
+                    document.cookie = "modal_visto=1; max-age=" + 30 * 24 * 60 * 60 + "; path=/";
+                });
+
+                document.getElementById('noBtn').addEventListener('click', function() {
+                    window.history.back();
+                });
+            }
         });
     </script>
+
 </body>
 
 </html>

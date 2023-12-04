@@ -65,7 +65,7 @@ if (isset($_GET['marcaCerveza'])) {
     for ($i = 1; $i <= $totalPaginas; $i++) {
         $paginationHTML .= "<li class='page-item'><a class='page-link' href='?marcaCerveza=$marcaCerveza&pagina=$i'>$i</a></li>";
     }
-    $paginacionHTML .= "</nav>";
+    $paginacionHTML .= "</ul></nav>";
 
     $query2 = "SELECT L.*
             FROM locales L
@@ -136,9 +136,9 @@ if (isset($_GET['marcaCerveza'])) {
         <div class="row">
             <?= $valor1; ?>
             <?= $valor2; ?>
-        </div>
-        <div class='col-12 text-center mt-3'>
-            <?= $paginacionHTML; ?>
+            <div class='col-12 text-center mt-3'>
+                <?= $paginacionHTML; ?>
+            </div>
         </div>
         <div class="row mt-4">
             <div class="col-12">

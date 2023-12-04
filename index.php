@@ -90,6 +90,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                             <option class="text-center" value="" selected>Escoge una</option>
                             <?= $valor; ?>
                         </select>
+                        <input type="hidden" name="pagina" value="<?= isset($_GET['pagina']) ? $_GET['pagina'] : 1 ?>">
                         <button type="submit" class="btn btn-success fw-semibold">ENCUENTRALA</button>
                     </form>
                 </div>

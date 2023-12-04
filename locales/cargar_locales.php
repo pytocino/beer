@@ -14,13 +14,22 @@ if (isset($_GET['marcaCerveza'])) {
         die("Error de conexión: " . $conexion->connect_error);
     }
 
-    // Realiza una consulta SQL para buscar locales que sirvan la marca de cerveza
+    // Definir la cantidad de resultados por página
+    $resultadosPorPagina = 10;
+
+    // Obtener el número de página actual desde un parámetro GET
+    $paginaActual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+
+    // Calcular el inicio y el límite para la consulta SQL
+    $inicio = ($paginaActual - 1) * $resultadosPorPagina;
+
+    // Consulta SQL para buscar locales que sirvan la marca de cerveza con paginación
     $query = "SELECT L.*
             FROM locales L
             JOIN marcas_locales ML ON L.id_local = ML.id_local
-            WHERE ML.nombre_marca = ?";
+            WHERE ML.nombre_marca = ?
+            LIMIT $inicio, $resultadosPorPagina";
 
-    // Utiliza una declaración preparada para evitar la inyección de SQL
     $stmt = $conexion->prepare($query);
     $stmt->bind_param("s", $marcaCerveza);
     $stmt->execute();
@@ -29,21 +38,30 @@ if (isset($_GET['marcaCerveza'])) {
     $valor1 = "";
     $valor2 = "";
 
-    // Mostrar los resultados
+    // Mostrar los resultados paginados
     if ($result->num_rows > 0) {
         $valor1 .= "<div class='col-12 text-center mt-5 mb-2'>
-                        <h1 class='text-bg-warning'><strong>" . ucwords($marcaCerveza) . "</strong></h1>
-                    </div>";
+                    <h1 class='text-bg-warning'><strong>" . ucwords($marcaCerveza) . "</strong></h1>
+                </div>";
         while ($row = $result->fetch_assoc()) {
             $valor2 .= "<div class='col-12 col-md-6 mt-4 mb-3'>
-                            <div class='card px-2 mb-2 pb-2 shadow text-center' style='width: 100%;'>
-                                <h3 class='card-title mt-2'>" . ucwords($row['nombre']) . "</h3>
-                                <p class='card-text'>" . ucwords($row['tipo_local']) . "</p>
-                                <a class='btn btn-dark' href='" . $row['direccion'] . "'target='_blank'>Como llegar</a>
-                            </div>
-                        </div>";
+                        <div class='card px-2 mb-2 pb-2 shadow text-center' style='width: 100%;'>
+                            <h3 class='card-title mt-2'>" . ucwords($row['nombre']) . "</h3>
+                            <p class='card-text'>" . ucwords($row['tipo_local']) . "</p>
+                            <a class='btn btn-dark' href='" . $row['direccion'] . "'target='_blank'>Como llegar</a>
+                        </div>
+                    </div>";
         }
     }
+
+    // Mostrar la paginación
+    $totalPaginas = ceil($totalResultados / $resultadosPorPagina);
+
+    $paginacion = '<nav aria-label="Page navigation example"><ul class="pagination justify-content-center">';
+    for ($i = 1; $i <= $totalPaginas; $i++) {
+        $paginacion .= "<li class='page-item'><a class='page-link' href='?marcaCerveza=$marcaCerveza&pagina=$i'>$i</a></li>";
+    }
+    $paginacion .= '</ul></nav>';
 
     $query2 = "SELECT L.*
             FROM locales L
@@ -115,6 +133,7 @@ if (isset($_GET['marcaCerveza'])) {
             <?= $valor1; ?>
             <?= $valor2; ?>
         </div>
+        <?= $paginacion; ?>
         <div class="row mt-4">
             <div class="col-12">
                 <button class="btn btn-dark" type="submit" id="coordenadasBoton">Mostrar en el mapa</button>

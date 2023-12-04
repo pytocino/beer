@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /search-results/
+Disallow: /api/
+Disallow: /temp/
+
+Sitemap: https://beerfinder.es/sitemap.xml

@@ -15,8 +15,6 @@ $valor3 = "";
 if ($resultado->num_rows > 0) {
     while ($fila = $resultado->fetch_assoc()) {
         $valor .= "<option value='" . $fila['nombre'] . "'>" . ucwords($fila['nombre']) . "</option>";
-    }
-    while ($fila = $resultado->fetch_assoc()) {
         $valor2 .= $fila['nombre'] . ", ";
     }
     $valor2 = rtrim($valor2, ", ");
@@ -34,6 +32,18 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
     <link rel="icon" type="image/png" href="ico/favicon-16x16.png">
     <link rel="icon" type="image/png" href="ico/favicon-32x32.png">
     <meta name="description" content="<?= $metaDescripcion; ?>">
+    <?php
+    // Colocar aquí tu código PHP para generar las etiquetas meta dinámicamente
+    if ($resultado->num_rows > 0) {
+        while ($fila = $resultado->fetch_assoc()) {
+            $nombreCerveza = ucwords($fila['nombre']);
+            $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cerveza " . $nombreCerveza . " con BeerFinder. ¡Busca esta cerveza y descubre dónde la sirven!";
+            echo "<meta name='description' content='" . $metaDescripcion . "'>";
+        }
+    } else {
+        echo "<meta name='description' content='No se encontraron resultados'>";
+    }
+    ?>
     <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">

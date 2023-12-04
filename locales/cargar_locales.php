@@ -71,7 +71,7 @@ if (isset($_GET['marcaCerveza'])) {
     }
 
     // Generar la paginación HTML
-    $paginacionHTML = "<nav aria-label='paginacion cervezas' class='d-flex justify-content-center'><ul class='pagination'>";
+    $paginacionHTML = "<nav aria-label='paginacion cervezas'><ul class='pagination pagination-lg justify-content-center'>";
     for ($i = 1; $i <= $totalPaginas; $i++) {
         $paginacionHTML .= "<li class='page-item'><a class='page-link' href='?marcaCerveza=$marcaCerveza&pagina=$i'>$i</a></li>";
     }

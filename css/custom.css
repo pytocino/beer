@@ -33,7 +33,7 @@ body {
 .custom-pagination {
     background-color: #212529;
     color: white;
-    border-color: #212529; 
+    border-right-color: white;
 }
 
 .custom-pagination:hover,

@@ -120,7 +120,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
             </div>
             <div class="col-12 col-sm-6 col-md-4 my-2">
                 <div class="card shadow">
-                    <img class="card-img-top img-fluid rounded" src="images/imagen2.jpg" alt="tirador de cereveza">
+                    <img class="card-img-top img-fluid" src="images/imagen2.jpg" alt="tirador de cereveza">
                     <div class="card-body">
                         <p class="card-text">
                             La cerveza, consumida con moderación, puede tener algunos beneficios para la salud.
@@ -136,7 +136,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
             </div>
             <div class="col-12 col-sm-6 col-md-4 my-2">
                 <div class="card shadow">
-                    <img class="card-img-top img-fluid rounded" src="images/coldbeer.jpg" alt="tirador de cereveza">
+                    <img class="card-img-top img-fluid" src="images/coldbeer.jpg" alt="tirador de cereveza">
                     <div class="card-body">
                         <p class="card-text">
                             ¿A quién no le gusta una buena cerveza fría? Según Brand Finance, la

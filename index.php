@@ -44,8 +44,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
         echo "<meta name='description' content='No se encontraron resultados'>";
     }
     ?>
-    <meta name="keywords"
-        content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
+    <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
@@ -103,8 +102,8 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                 <img class="rounded img-fluid" src="images/beerfinder2.gif" alt="gif beerfinder">
             </div>
             <div class="col-12 col-sm-6 col-md-4 my-2">
-                <div class="card">
-                    <img class="card-img-top img-fluid rounded" src="images/imagen1.jpg" alt="tirador de cerveza">
+                <div class="card shadow">
+                    <img class="card-img-top img-fluid" src="images/imagen1.jpg" alt="tirador de cerveza">
                     <div class="card-body">
                         <p class="card-text">
                             La cerveza es una bebida alcohólica que ha sido parte de la cultura humana
@@ -118,43 +117,38 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                         </p>
                     </div>
                 </div>
-                <!-- <img class="img-fluid rounded" src="images/imagen1.jpg" alt="tirador de cereveza">
-                <p class="pt-4 pb-4">La cerveza es una bebida alcohólica que ha sido parte de la cultura humana
-                    durante
-                    miles de
-                    años. ¿Sabías que la cerveza primitiva era simplemente harina de cereal fermentada con el
-                    mismo sistema que el pan?. Además, los babilonios consideraban la cerveza como el alimento
-                    más importante y el código del rey Hammurabi dictaba que debía garantizarse a todo ciudadano una
-                    ración diaria de cerveza como parte de la dieta base en Babilonia.
-                    <strong>¡Salud!🍻</strong>
-                </p> -->
-            </div>
-
-
-
-
-
-            <div class="col-12 col-sm-6 col-md-4 my-2">
-                <img class="img-fluid rounded" src="images/imagen2.jpg" alt="tirador de cereveza">
-                <p class="pt-4 pb-4">La cerveza, consumida con moderación, puede tener algunos para la salud.
-                    Contiene
-                    nutrientes beneficiosos como ácido fólico, proteínas, carbohidratos, fibra soluble, fósforo,
-                    silicio, potasio y sodio. Además, un estudio concluyó que las personas que consumían cerveza
-                    habitualmente de forma moderada tenían menor incidencia de diabetes mellitus e hipertensión,
-                    y mayor cantidad de colesterol bueno que aquellas que no la bebían.
-                    <strong>¡Salud!🍻</strong>
-                </p>
             </div>
             <div class="col-12 col-sm-6 col-md-4 my-2">
-                <img class="img-fluid rounded" src="images/coldbeer.jpg" alt="tirador de cereveza">
-                <p class="pt-4 pb-4">¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consulora), la
-                    mejor
-                    cerveza del mundo es Corona, de origen mexicano. El valor de esta marca aumentó un 21% hasta
-                    alcanzar los 7.000 millones de dólares. Heineken (neerlandesa), por su parte, ocupa el
-                    segundo puesto con un aumento de su marca del 23% a 6.900 millones de dólares. Budweiser,
-                    estadounidense, con una valoración de 5.600 millones, cierra el podio.
-                    <strong>¡Salud!🍻</strong>
-                </p>
+                <div class="card shadow">
+                    <img class="card-img-top img-fluid rounded" src="images/imagen2.jpg" alt="tirador de cereveza">
+                    <div class="card-body">
+                        <p class="card-text">
+                            La cerveza, consumida con moderación, puede tener algunos para la salud.
+                            Contiene
+                            nutrientes beneficiosos como ácido fólico, proteínas, carbohidratos, fibra soluble, fósforo,
+                            silicio, potasio y sodio. Además, un estudio concluyó que las personas que consumían cerveza
+                            habitualmente de forma moderada tenían menor incidencia de diabetes mellitus e hipertensión,
+                            y mayor cantidad de colesterol bueno que aquellas que no la bebían.
+                            <strong>¡Salud!🍻</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 my-2">
+                <div class="card shadow">
+                    <img class="card-img-top img-fluid rounded" src="images/coldbeer.jpg" alt="tirador de cereveza">
+                    <div class="card-body">
+                        <p class="card-text">
+                            ¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consulora), la
+                            mejor
+                            cerveza del mundo es Corona, de origen mexicano. El valor de esta marca aumentó un 21% hasta
+                            alcanzar los 7.000 millones de dólares. Heineken (neerlandesa), por su parte, ocupa el
+                            segundo puesto con un aumento de su marca del 23% a 6.900 millones de dólares. Budweiser,
+                            estadounidense, con una valoración de 5.600 millones, cierra el podio.
+                            <strong>¡Salud!🍻</strong>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -190,18 +184,18 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
     </footer>
     <script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             if (document.cookie.indexOf('modal_visto=1') === -1) {
                 let ageVerificationModal = new bootstrap.Modal(document.getElementById('ageVerificationModal'));
                 ageVerificationModal.show();
 
                 // Agrega eventos a los botones del modal
-                document.getElementById('yesBtn').addEventListener('click', function () {
+                document.getElementById('yesBtn').addEventListener('click', function() {
                     ageVerificationModal.hide();
                     document.cookie = "modal_visto=1; max-age=" + 30 * 24 * 60 * 60 + "; path=/";
                 });
 
-                document.getElementById('noBtn').addEventListener('click', function () {
+                document.getElementById('noBtn').addEventListener('click', function() {
                     window.history.back();
                 });
             }

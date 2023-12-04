@@ -38,7 +38,7 @@ if (isset($_GET['marcaCerveza'])) {
             $valor2 .= "<div class='col-12 col-md-6 mt-4 mb-3'>
                             <div class='card px-2 mb-2 pb-2 shadow text-center' style='width: 100%;'>
                                 <h3 class='card-title mt-2'>" . ucwords($row['nombre']) . "</h3>
-                                <p class='card-text'>Tipo de local: " . ucwords($row['tipo_local']) . "</p>
+                                <p class='card-text'>" . ucwords($row['tipo_local']) . "</p>
                                 <a class='btn btn-dark' href='" . $row['direccion'] . "'target='_blank'>Como llegar</a>
                             </div>
                         </div>";
@@ -67,9 +67,9 @@ if (isset($_GET['marcaCerveza'])) {
     }
     $localescod = json_encode($locales);
 ?>
-    <script>
-        let locales = <?= $localescod; ?>;
-    </script>
+<script>
+    let locales = <?= $localescod; ?>;
+</script>
 <?php
     // Cierra la conexión a la base de datos
     $stmt->close();
@@ -83,9 +83,11 @@ if (isset($_GET['marcaCerveza'])) {
     <title>BEERFINDER</title>
     <link rel="icon" type="image/png" href="../ico/favicon-16x16.png">
     <link rel="icon" type="image/png" href="../ico/favicon-32x32.png">
-    <meta name="description" content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
+    <meta name="description"
+        content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
     <meta name="description" content="¿Donde tomarme una <?= $valor2; ?>? ">
-    <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
+    <meta name="keywords"
+        content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="../ico/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">
@@ -99,10 +101,10 @@ if (isset($_GET['marcaCerveza'])) {
 </head>
 
 <body>
-<header class="container-fluid">
+    <header class="container-fluid border-bottom">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand justify-content-center my-4 px-3">
+                <nav class="navbar navbar-expand justify-content-center my-4">
                     <a href="../index.php">
                         <img class="img-fluid" src="../images/beerfinder.svg" alt="logo beerfinder">
                     </a>

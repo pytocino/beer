@@ -123,7 +123,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                     <img class="card-img-top img-fluid rounded" src="images/imagen2.jpg" alt="tirador de cereveza">
                     <div class="card-body">
                         <p class="card-text">
-                            La cerveza, consumida con moderación, puede tener algunos para la salud.
+                            La cerveza, consumida con moderación, puede tener algunos beneficios para la salud.
                             Contiene
                             nutrientes beneficiosos como ácido fólico, proteínas, carbohidratos, fibra soluble, fósforo,
                             silicio, potasio y sodio. Además, un estudio concluyó que las personas que consumían cerveza
@@ -139,9 +139,8 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                     <img class="card-img-top img-fluid rounded" src="images/coldbeer.jpg" alt="tirador de cereveza">
                     <div class="card-body">
                         <p class="card-text">
-                            ¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consultora), la
-                            mejor
-                            cerveza del mundo es Corona, de origen mexicano. El valor de esta marca aumentó un 21% hasta
+                            ¿A quién no le gusta una buena cerveza fría? Según Brand Finance, la
+                            mejor cerveza del mundo es Coronita, de origen mexicano. El valor de esta marca aumentó un 21% hasta
                             alcanzar los 7.000 millones de dólares. Heineken (neerlandesa), por su parte, ocupa el
                             segundo puesto con un aumento de su marca del 23% a 6.900 millones de dólares. Budweiser,
                             estadounidense, con una valoración de 5.600 millones, cierra el podio.
@@ -185,11 +184,11 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
     <script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+
             if (document.cookie.indexOf('modal_visto=1') === -1) {
                 let ageVerificationModal = new bootstrap.Modal(document.getElementById('ageVerificationModal'));
                 ageVerificationModal.show();
 
-                // Agrega eventos a los botones del modal
                 document.getElementById('yesBtn').addEventListener('click', function() {
                     ageVerificationModal.hide();
                     document.cookie = "modal_visto=1; max-age=" + 30 * 24 * 60 * 60 + "; path=/";

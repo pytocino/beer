@@ -20,6 +20,22 @@ if (isset($_GET['marcaCerveza'])) {
     // Obtener el número de página actual de la URL
     $paginaActual = $_GET['pagina'];
 
+    // Consulta SQL para contar el número total de resultados
+    $countQuery = "SELECT COUNT(*) as total
+            FROM locales L
+            JOIN marcas_locales ML ON L.id_local = ML.id_local
+            WHERE ML.nombre_marca = ?";
+
+    $stmtCount = $conexion->prepare($countQuery);
+    $stmtCount->bind_param("s", $marcaCerveza);
+    $stmtCount->execute();
+    $resultCount = $stmtCount->get_result();
+    $rowCount = $resultCount->fetch_assoc();
+    $totalResultados = $rowCount['total'];
+
+    // Calcular el número total de páginas
+    $totalPaginas = ceil($totalResultados / $resultadosPorPagina);
+
     // Calcular el desplazamiento para la consulta SQL
     $offset = ($paginaActual - 1) * $resultadosPorPagina;
 
@@ -54,15 +70,6 @@ if (isset($_GET['marcaCerveza'])) {
         }
     }
 
-    // Obtener el número total de resultados
-    $totalResultados = $result->num_rows;
-
-    // Calcular el número total de páginas
-    $totalPaginas = ceil($totalResultados / $resultadosPorPagina);
-    // Después de calcular el número total de páginas
-    echo "Total de páginas: " . $totalPaginas;
-
-
     // Generar la paginación HTML
     $paginacionHTML = "<nav aria-label='paginacion cervezas'><ul class='pagination'>";
     for ($i = 1; $i <= $totalPaginas; $i++) {
@@ -70,6 +77,8 @@ if (isset($_GET['marcaCerveza'])) {
     }
     $paginacionHTML .= "</ul></nav>";
 
+    // Después de calcular el número total de páginas
+    echo "Total de páginas: " . $totalPaginas;
 
     $query2 = "SELECT L.*
             FROM locales L

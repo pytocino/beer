@@ -153,7 +153,7 @@ if (isset($_GET['marcaCerveza'])) {
         <div class="row mt-4">
             <div class="col-12">
                 <button class="btn btn-dark" type="submit" id="coordenadasBoton">Mostrar en el mapa</button>
-                <div class="mt-4 mb-4" id="mapa" style="height:400px;"></div>
+                <div class="mapa mt-4 mb-4" id="mapa" style="height:400px;"></div>
             </div>
         </div>
     </main>

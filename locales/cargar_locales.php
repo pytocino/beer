@@ -41,7 +41,7 @@ if (isset($_GET['marcaCerveza'])) {
     // Mostrar los resultados paginados
     if ($result->num_rows > 0) {
         $valor1 .= "<div class='col-12 text-center mt-5 mb-2'>
-                    <h1 class='text-bg-warning'><strong>" . ucwords($marcaCerveza) . "</strong></h1>
+                    <h1><strong>" . ucwords($marcaCerveza) . "</strong></h1>
                 </div>";
         while ($row = $result->fetch_assoc()) {
             $valor2 .= "<div class='col-12 col-md-6 mt-4 mb-3'>
@@ -117,7 +117,7 @@ if (isset($_GET['marcaCerveza'])) {
 </head>
 
 <body class="fondo">
-    <header class="container-fluid border-bottom">
+    <header class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand justify-content-center my-4">

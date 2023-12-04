@@ -103,7 +103,7 @@ if (isset($_GET['marcaCerveza'])) {
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand justify-content-center my-4 px-3">
-                    <a href="index.php">
+                    <a href="../index.php">
                         <img class="img-fluid" src="../images/beerfinder.svg" alt="logo beerfinder">
                     </a>
                 </nav>

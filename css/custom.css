@@ -27,5 +27,5 @@ body {
 
 .fondo {
     background-color: #ffffff;
-    background-image: linear-gradient(to bottom, #ffffff, #ffcc00);
+    background-image: linear-gradient(to bottom, white, #ffcc00);
 }

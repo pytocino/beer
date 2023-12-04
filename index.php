@@ -68,10 +68,10 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
             </div>
         </div>
     </div>
-    <header class="container-fluid">
+    <header class="container-fluid fixed-top">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand justify-content-center my-4 px-3 fixed-top">
+                <nav class="navbar navbar-expand justify-content-center my-4 px-3">
                     <a href="index.php">
                         <img class="img-fluid" src="images/beerfinder.svg" alt="logo beerfinder">
                     </a>

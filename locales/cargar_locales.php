@@ -61,11 +61,12 @@ if (isset($_GET['marcaCerveza'])) {
     $totalPaginas = ceil($totalResultados / $resultadosPorPagina);
 
     // Generar la paginación HTML
-    $paginacionHTML = "<nav arial-label='paginacion cervezas>'<ul class='pagination'>";
+    $paginacionHTML = "<nav aria-label='paginacion cervezas'><ul class='pagination'>";
     for ($i = 1; $i <= $totalPaginas; $i++) {
-        $paginationHTML .= "<li class='page-item'><a class='page-link' href='?marcaCerveza=$marcaCerveza&pagina=$i'>$i</a></li>";
+        $paginacionHTML .= "<li class='page-item'><a class='page-link' href='?marcaCerveza=$marcaCerveza&pagina=$i'>$i</a></li>";
     }
     $paginacionHTML .= "</ul></nav>";
+
 
     $query2 = "SELECT L.*
             FROM locales L

@@ -139,7 +139,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                     <img class="card-img-top img-fluid rounded" src="images/coldbeer.jpg" alt="tirador de cereveza">
                     <div class="card-body">
                         <p class="card-text">
-                            ¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consulora), la
+                            ¿A quien no le gusta una buena cerveza fria? Según Brand Finance(consultora), la
                             mejor
                             cerveza del mundo es Corona, de origen mexicano. El valor de esta marca aumentó un 21% hasta
                             alcanzar los 7.000 millones de dólares. Heineken (neerlandesa), por su parte, ocupa el

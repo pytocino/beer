@@ -18,7 +18,7 @@ if (isset($_GET['marcaCerveza'])) {
     $resultadosPorPagina = 10;
 
     // Obtener el número de página actual de la URL
-    $paginaActual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+    $paginaActual = $_GET['pagina'];
 
     // Calcular el desplazamiento para la consulta SQL
     $offset = ($paginaActual - 1) * $resultadosPorPagina;
@@ -61,12 +61,11 @@ if (isset($_GET['marcaCerveza'])) {
     $totalPaginas = ceil($totalResultados / $resultadosPorPagina);
 
     // Generar la paginación HTML
-    $paginationHTML = "<div class='col-12 text-center mt-3'>";
+    $paginacionHTML = "<nav arial-label='paginacion cervezas>'<ul class='pagination'>";
     for ($i = 1; $i <= $totalPaginas; $i++) {
-        $paginationHTML .= "<a href='?marcaCerveza=$marcaCerveza&pagina=$i'>$i</a>";
-        $paginationHTML .= " | ";
+        $paginationHTML .= "<li class='page-item'><a class='page-link' href='?marcaCerveza=$marcaCerveza&pagina=$i'>$i</a></li>";
     }
-    $paginationHTML .= "</div>";
+    $paginacionHTML .= "</nav>";
 
     $query2 = "SELECT L.*
             FROM locales L
@@ -138,7 +137,9 @@ if (isset($_GET['marcaCerveza'])) {
             <?= $valor1; ?>
             <?= $valor2; ?>
         </div>
-        <?= $paginacionHTML; ?>
+        <div class='col-12 text-center mt-3'>
+            <?= $paginacionHTML; ?>
+        </div>
         <div class="row mt-4">
             <div class="col-12">
                 <button class="btn btn-dark" type="submit" id="coordenadasBoton">Mostrar en el mapa</button>

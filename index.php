@@ -82,7 +82,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
     <main class="container mt-5">
         <div class="row">
             <div class="col-12">
-                <div class="background-image d-flex justify-content-center align-items-center">
+                <div class="background-image d-flex justify-content-center align-items-center shadow">
                     <form class="form form-control text-center" action="locales/cargar_locales.php" method="get">
                         <label for="selectOptionCervezas" class="form-label fw-semibold display-5 my-3">¿QUE CERVEZA TE
                             APETECE?</label>

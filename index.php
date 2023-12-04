@@ -44,7 +44,8 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
         echo "<meta name='description' content='No se encontraron resultados'>";
     }
     ?>
-    <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
+    <meta name="keywords"
+        content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
@@ -102,7 +103,22 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                 <img class="rounded img-fluid" src="images/beerfinder2.gif" alt="gif beerfinder">
             </div>
             <div class="col-12 col-sm-6 col-md-4 my-2">
-                <img class="img-fluid rounded" src="images/imagen1.jpg" alt="tirador de cereveza">
+                <div class="card">
+                    <img class="card-img-top img-fluid rounded" src="images/imagen1.jpg" alt="tirador de cerveza">
+                    <div class="card-body">
+                        <p class="card-text">
+                            La cerveza es una bebida alcohólica que ha sido parte de la cultura humana
+                            durante miles de años. ¿Sabías que la cerveza primitiva era simplemente harina de cereal
+                            fermentada con el
+                            mismo sistema que el pan?. Además, los babilonios consideraban la cerveza como el alimento
+                            más importante y el código del rey Hammurabi dictaba que debía garantizarse a todo ciudadano
+                            una
+                            ración diaria de cerveza como parte de la dieta base en Babilonia.
+                            <strong>¡Salud!🍻</strong>
+                        </p>
+                    </div>
+                </div>
+                <!-- <img class="img-fluid rounded" src="images/imagen1.jpg" alt="tirador de cereveza">
                 <p class="pt-4 pb-4">La cerveza es una bebida alcohólica que ha sido parte de la cultura humana
                     durante
                     miles de
@@ -111,8 +127,13 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
                     más importante y el código del rey Hammurabi dictaba que debía garantizarse a todo ciudadano una
                     ración diaria de cerveza como parte de la dieta base en Babilonia.
                     <strong>¡Salud!🍻</strong>
-                </p>
+                </p> -->
             </div>
+
+
+
+
+
             <div class="col-12 col-sm-6 col-md-4 my-2">
                 <img class="img-fluid rounded" src="images/imagen2.jpg" alt="tirador de cereveza">
                 <p class="pt-4 pb-4">La cerveza, consumida con moderación, puede tener algunos para la salud.
@@ -169,18 +190,18 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
     </footer>
     <script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             if (document.cookie.indexOf('modal_visto=1') === -1) {
                 let ageVerificationModal = new bootstrap.Modal(document.getElementById('ageVerificationModal'));
                 ageVerificationModal.show();
 
                 // Agrega eventos a los botones del modal
-                document.getElementById('yesBtn').addEventListener('click', function() {
+                document.getElementById('yesBtn').addEventListener('click', function () {
                     ageVerificationModal.hide();
                     document.cookie = "modal_visto=1; max-age=" + 30 * 24 * 60 * 60 + "; path=/";
                 });
 
-                document.getElementById('noBtn').addEventListener('click', function() {
+                document.getElementById('noBtn').addEventListener('click', function () {
                     window.history.back();
                 });
             }

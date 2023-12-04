@@ -14,21 +14,11 @@ if (isset($_GET['marcaCerveza'])) {
         die("Error de conexión: " . $conexion->connect_error);
     }
 
-    // Definir la cantidad de resultados por página
-    $resultadosPorPagina = 10;
-
-    // Obtener el número de página actual desde un parámetro GET
-    $paginaActual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
-
-    // Calcular el inicio y el límite para la consulta SQL
-    $inicio = ($paginaActual - 1) * $resultadosPorPagina;
-
     // Consulta SQL para buscar locales que sirvan la marca de cerveza con paginación
     $query = "SELECT L.*
             FROM locales L
             JOIN marcas_locales ML ON L.id_local = ML.id_local
-            WHERE ML.nombre_marca = ?
-            LIMIT $inicio, $resultadosPorPagina";
+            WHERE ML.nombre_marca = ?";
 
     $stmt = $conexion->prepare($query);
     $stmt->bind_param("s", $marcaCerveza);
@@ -53,15 +43,6 @@ if (isset($_GET['marcaCerveza'])) {
                     </div>";
         }
     }
-
-    // Mostrar la paginación
-    $totalPaginas = ceil($totalResultados / $resultadosPorPagina);
-
-    $paginacion = '<nav aria-label="Page navigation example"><ul class="pagination justify-content-center">';
-    for ($i = 1; $i <= $totalPaginas; $i++) {
-        $paginacion .= "<li class='page-item'><a class='page-link' href='?marcaCerveza=$marcaCerveza&pagina=$i'>$i</a></li>";
-    }
-    $paginacion .= '</ul></nav>';
 
     $query2 = "SELECT L.*
             FROM locales L

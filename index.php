@@ -79,7 +79,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
             </div>
         </div>
     </header>
-    <main class="container mt-4">
+    <main class="container mt-5">
         <div class="row">
             <div class="col-12">
                 <div class="background-image d-flex justify-content-center align-items-center">

@@ -32,7 +32,7 @@ if (isset($_GET['marcaCerveza'])) {
     // Mostrar los resultados
     if ($result->num_rows > 0) {
         $valor1 .= "<div class='col-12 text-center mt-5 mb-2'>
-                        <h1><strong>" . ucwords($marcaCerveza) . "</strong></h1>
+                        <h1 class='text-bg-warning'><strong>" . ucwords($marcaCerveza) . "</strong></h1>
                     </div>";
         while ($row = $result->fetch_assoc()) {
             $valor2 .= "<div class='col-12 col-md-6 mt-4 mb-3'>
@@ -67,9 +67,9 @@ if (isset($_GET['marcaCerveza'])) {
     }
     $localescod = json_encode($locales);
 ?>
-<script>
-    let locales = <?= $localescod; ?>;
-</script>
+    <script>
+        let locales = <?= $localescod; ?>;
+    </script>
 <?php
     // Cierra la conexión a la base de datos
     $stmt->close();
@@ -83,11 +83,9 @@ if (isset($_GET['marcaCerveza'])) {
     <title>BEERFINDER</title>
     <link rel="icon" type="image/png" href="../ico/favicon-16x16.png">
     <link rel="icon" type="image/png" href="../ico/favicon-32x32.png">
-    <meta name="description"
-        content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
+    <meta name="description" content="Encuentra fácilmente bares y restaurantes que sirven la cerveza que más te gusta con BeerFinder. ¡Busca una cerveza y descubre donde la sirven!">
     <meta name="description" content="¿Donde tomarme una <?= $valor2; ?>? ">
-    <meta name="keywords"
-        content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
+    <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="../ico/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../bootstrap-5.3.2-dist/css/bootstrap.min.css">

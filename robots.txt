@@ -6,11 +6,3 @@ Disallow: /api/
 Disallow: /temp/
 
 Sitemap: https://beerfinder.es/sitemap.xml
-
-
-#  _                        
-# | |__   ___  ___ _ __ ___ 
-# | '_ \ / _ \/ _ \ '__/ __|
-# | |_| |  __/  __/ |  \__ \
-# |_.__/ \___|\___|_|  |___/
-# beer - pale ale - brew - hops - stout - mild - wheat - lager - pilsner - cold one

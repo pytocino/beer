@@ -26,6 +26,6 @@ body {
 }
 
 .fondo {
-    background-color: #F9D857;
-    height: auto;
+    background-color: #ffffff;
+    background-image: linear-gradient(to bottom, #ffffff, #ffcc00);
 }

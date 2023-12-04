@@ -116,7 +116,7 @@ if (isset($_GET['marcaCerveza'])) {
     <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@1,500&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="fondo">
     <header class="container-fluid border-bottom">
         <div class="row">
             <div class="col-12">

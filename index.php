@@ -71,7 +71,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
     <header class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand justify-content-center my-4 px-3">
+                <nav class="navbar navbar-expand justify-content-center my-4 px-3 fixed-top">
                     <a href="index.php">
                         <img class="img-fluid" src="images/beerfinder.svg" alt="logo beerfinder">
                     </a>

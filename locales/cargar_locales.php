@@ -110,7 +110,7 @@ if (isset($_GET['marcaCerveza'])) {
             </div>
         </div>
     </header>
-    <main class="container fondo px-4">
+    <main class="container">
         <div class="row">
             <?= $valor1; ?>
             <?= $valor2; ?>

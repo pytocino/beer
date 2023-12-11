@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$conexion = new mysqli("localhost", "super", "123456", "beerfinder");
-if ($conexion->connect_error) {
-    die("Error en la conexion con la base de datos" . $conexion->connect_error);
+$host = "localhost";
+$usuario = "super";
+$contrasena = "123456";
+$bd = "beerfinder";
+try {
+    $conexion = new mysqli($host, $usuario, $contrasena, $bd);
+    if ($conexion->connect_error) {
+        throw new Exception('Error de conexión: ' . $conexion->connect_error);
+    }
+} catch (Exception $e) {
+    die('Error: ' . $e->getMessage());
 }
 $consulta = "SELECT id_marca, nombre FROM marcas_cerveza ORDER BY nombre";
 $consulta2 = "SELECT nombre FROM locales ORDER BY nombre";

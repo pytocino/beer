@@ -54,6 +54,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
     ?>
     <meta name="keywords" content="BeerFinder, localizador de cervezas, bares de cerveza, restaurantes con cerveza, locales con cerveza">
     <meta name="robots" content="index, follow">
+    <meta name="google-adsense-account" content="ca-pub-6950924566762663">
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">

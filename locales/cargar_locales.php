@@ -128,6 +128,8 @@ if (isset($_GET['marcaCerveza'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@1,500&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6950924566762663"
+     crossorigin="anonymous"></script>
 </head>
 
 <body class="fondo">

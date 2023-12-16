@@ -186,6 +186,7 @@ $metaDescripcion = "Encuentra fácilmente bares y restaurantes que sirven la cer
             <div class="col-12 bg-black">
                 <div class="text-center text-white py-4">
                     <h3>© 2023 BEERFINDER<br>Todos los derechos reservados.</h3>
+                    <a href="politicaprivacidad.html">Política de privacidad</a>
                 </div>
             </div>
         </div>
